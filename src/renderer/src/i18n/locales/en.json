@@ -7156,7 +7156,7 @@
           "promptFirstComposer": {
             "title": "Prompt-first worktree creation",
             "description": "Open Create worktree on a chat-style prompt box with project, host and agent as compact pills.",
-            "copy": "Cmd+N opens on a prompt box. Enter creates the worktree and sends the prompt to the selected agent as its first message.",
+            "copy": "New worktree opens on a prompt box. Enter creates the worktree and sends the prompt to the selected agent as its first message.",
             "toggleLabel": "Toggle prompt-first worktree creation"
           }
         },

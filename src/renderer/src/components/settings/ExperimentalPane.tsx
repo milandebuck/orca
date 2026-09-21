@@ -295,7 +295,7 @@ export function ExperimentalPane({
               <p className="text-xs text-muted-foreground">
                 {translate(
                   'auto.components.settings.ExperimentalPane.promptFirstComposer.copy',
-                  'Cmd+N opens on a prompt box. Enter creates the worktree and sends the prompt to the selected agent as its first message.'
+                  'New worktree opens on a prompt box. Enter creates the worktree and sends the prompt to the selected agent as its first message.'
                 )}
               </p>
             </div>
