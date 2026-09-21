@@ -1,0 +1,23 @@
+src/renderer/src/components/NewWorkspaceComposerCard.tsx
+  s_8ebe69eb7bb5c1::t_e8a5551dee0e7c 306
+src/renderer/src/components/new-workspace/NewWorkspaceComposerProjectSection.tsx
+  s_8ebe69eb7bb5c1::t_e8a5551dee0e7c 124,144
+src/renderer/src/components/new-workspace/NewWorkspaceComposerAgentSection.tsx
+  s_8ebe69eb7bb5c1::t_e8a5551dee0e7c 76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9bfd68f0f96611dc8bffb1f4cd7a929da42b6dc0",
+  "prompts": {},
+  "sessions": {
+    "s_8ebe69eb7bb5c1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "08d20141-5292-409b-b691-a54ab3f3b6cb",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
