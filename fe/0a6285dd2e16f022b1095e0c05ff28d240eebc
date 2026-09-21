@@ -1,0 +1,23 @@
+src/renderer/src/components/NewWorkspaceComposerModal.tsx
+  s_beff0ba5750dd0::t_54c9a69f2f3c19 147-148,159
+src/renderer/src/components/new-workspace/NewWorkspaceComposerAgentSection.tsx
+  s_beff0ba5750dd0::t_8f0f1014284b13 76
+src/renderer/src/components/new-workspace/NewWorkspaceComposerProjectSection.tsx
+  s_beff0ba5750dd0::t_88a081da9d5757 124,144
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fe0a6285dd2e16f022b1095e0c05ff28d240eebc",
+  "prompts": {},
+  "sessions": {
+    "s_beff0ba5750dd0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f88eb0d-3e92-4010-b7ae-a4f3f53cc1fe",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": null
+    }
+  }
+}
