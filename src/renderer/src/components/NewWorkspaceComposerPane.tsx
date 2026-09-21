@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 import { useAppStore } from '@/store'
+import { isImeOwnedKeyboardEvent } from '@/lib/ime-composition-keyboard-event'
 import { getWorkspaceComposerInitialFocusTarget } from '@/lib/workspace-composer-initial-focus'
 import {
   WorkspaceComposerBody,
@@ -41,10 +42,17 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
     }
   }, [activeWorktreeId, dismiss])
 
-  // Why: no dismissable layer here; nested Radix layers preventDefault Escape before it bubbles.
+  // Why: no dismissable layer here; nested Radix layers preventDefault Escape before it bubbles,
+  // and listening on window (after document) is what lets us see that. Escape typed into the
+  // sidebar, or one that cancels an IME composition, must not throw the prompt away.
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent): void => {
-      if (event.key !== 'Escape' || event.defaultPrevented) {
+      if (event.key !== 'Escape' || event.defaultPrevented || isImeOwnedKeyboardEvent(event)) {
+        return
+      }
+      const target = event.target
+      const insidePane = target instanceof Node && containerRef.current?.contains(target) === true
+      if (!insidePane && target !== document.body) {
         return
       }
       event.preventDefault()
