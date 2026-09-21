@@ -1,0 +1,33 @@
+src/renderer/src/components/NewWorkspaceComposerPane.tsx
+  s_8ebe69eb7bb5c1::t_28bb27991dcb58 59
+src/renderer/src/components/NewWorkspaceComposerModal.tsx
+  s_beff0ba5750dd0::t_54c9a69f2f3c19 147-148,159
+src/renderer/src/components/new-workspace/NewWorkspaceComposerAgentSection.tsx
+  s_beff0ba5750dd0::t_8f0f1014284b13 76
+src/renderer/src/components/new-workspace/NewWorkspaceComposerProjectSection.tsx
+  s_beff0ba5750dd0::t_88a081da9d5757 124,144
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6a00b06b3b496a41bad70f1dcc69d8cbd994fcf8",
+  "prompts": {},
+  "sessions": {
+    "s_8ebe69eb7bb5c1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "08d20141-5292-409b-b691-a54ab3f3b6cb",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    },
+    "s_beff0ba5750dd0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f88eb0d-3e92-4010-b7ae-a4f3f53cc1fe",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": null
+    }
+  }
+}

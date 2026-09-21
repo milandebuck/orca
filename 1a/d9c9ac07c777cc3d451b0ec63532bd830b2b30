@@ -1,0 +1,21 @@
+src/renderer/src/lib/quick-create-prompt.ts
+  s_beff0ba5750dd0::t_c5dae66ebaff9e 24-25,27
+src/renderer/src/lib/quick-create-prompt.test.ts
+  s_beff0ba5750dd0::t_6e45790238fbfa 26-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1ad9c9ac07c777cc3d451b0ec63532bd830b2b30",
+  "prompts": {},
+  "sessions": {
+    "s_beff0ba5750dd0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f88eb0d-3e92-4010-b7ae-a4f3f53cc1fe",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": null
+    }
+  }
+}

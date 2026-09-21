@@ -1,0 +1,19 @@
+src/renderer/src/components/NewWorkspaceComposerCard.prompt.test.tsx
+  s_beff0ba5750dd0::t_52dbf1245fb8b9 115-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ca70c666373f76cd61162ee084f47e826c3a5aaa",
+  "prompts": {},
+  "sessions": {
+    "s_beff0ba5750dd0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f88eb0d-3e92-4010-b7ae-a4f3f53cc1fe",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": null
+    }
+  }
+}

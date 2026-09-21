@@ -1,0 +1,138 @@
+src/renderer/src/components/NewWorkspaceComposerCard.tsx
+  s_db3183ccd76183::t_d39e10f6a745d5 31,338-344,346-355,359-364
+  s_8ebe69eb7bb5c1::t_2ecd723c47c927 32-33,329-330,331,335,357,366,368,370-375,378
+  s_8ebe69eb7bb5c1::t_68431dcae96719 384
+  s_8ebe69eb7bb5c1::t_d9a82c20ea41dd 42,146,369
+  s_8ebe69eb7bb5c1::t_da6c0ff09ebb3f 27,30,69,93-95,181-183,187-193,195,295-328,332-334,336-356,358-365,379-383
+src/renderer/src/components/NewWorkspaceComposerModal.tsx
+  s_c175692950eef3::t_62e874fabac946 41
+  s_8ebe69eb7bb5c1::t_5573311dc2ddff 3
+  s_8ebe69eb7bb5c1::t_643ca74933543e 87,98-101
+  s_8ebe69eb7bb5c1::t_6bf5698114f3cb 119
+  s_8ebe69eb7bb5c1::t_53392398541506 30,39,64-71,73,112,117-118,120-122,129-130,134,142,303-314
+  s_8ebe69eb7bb5c1::t_ae4588466b3896 135-136,143-144,319
+src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptSection.tsx
+  s_c175692950eef3::t_7f98885dc6037f 1-10,13-14,19-24,26-41,68,72,75-77
+  s_8ebe69eb7bb5c1::t_af33fb4175a35c 74
+  s_8ebe69eb7bb5c1::t_175691ad0dcdf5 11-12,15-18,25,42-55,57-67,70-71,73
+  s_8ebe69eb7bb5c1::t_643ca74933543e 56,69
+src/renderer/src/components/new-workspace/new-workspace-composer-card-props.ts
+  s_c175692950eef3::t_0ba01b49b0322f 64-65
+src/renderer/src/hooks/composer-state/composer-submit-orchestration.ts
+  s_c175692950eef3::t_a40adfba43294d 192,223
+src/renderer/src/hooks/composer-state/quick-creation-execution.ts
+  s_c175692950eef3::t_6f6e98ea64cbc4 5,46,54,128-132,284
+src/renderer/src/hooks/composer-state/quick-submit-action.ts
+  s_c175692950eef3::t_6936aae05cb7c1 18,45,79,163
+src/renderer/src/i18n/locales/en.json
+  s_c175692950eef3::t_f495db4efed36a 1740-1742
+  s_8ebe69eb7bb5c1::t_cb7af7d32868b5 1743
+  s_8ebe69eb7bb5c1::t_b1eb778c2bad6f 7155-7160,9595-9603
+src/renderer/src/lib/linked-work-item-context.ts
+  s_c175692950eef3::t_74533fec572877 202-215,217
+src/renderer/src/lib/quick-create-prompt.test.ts
+  s_c175692950eef3::t_f6b7f35c2671db 1-31
+src/renderer/src/lib/quick-create-prompt.ts
+  s_c175692950eef3::t_2797f691227079 1-29
+src/renderer/src/lib/workspace-composer-initial-focus.test.ts
+  s_c175692950eef3::t_8e0ac1dd957222 7-18
+src/renderer/src/lib/workspace-composer-initial-focus.ts
+  s_c175692950eef3::t_24d74bae8299e7 1,12,14
+src/renderer/src/components/new-workspace/NewWorkspaceComposerProjectSection.tsx
+  s_8ebe69eb7bb5c1::t_3f9494b24ff54b 1-123,125-143,145-203
+src/renderer/src/components/new-workspace/NewWorkspaceComposerAgentSection.tsx
+  s_8ebe69eb7bb5c1::t_3f9494b24ff54b 1-75,77-97
+src/renderer/src/components/NewWorkspaceComposerCard.prompt.test.tsx
+  s_8ebe69eb7bb5c1::t_fdc32f59c7afb8 95-99
+  s_8ebe69eb7bb5c1::t_3fd412e3c8d5d7 1-16,22-94,100-126
+  s_8ebe69eb7bb5c1::t_643ca74933543e 17-21
+src/renderer/src/components/new-workspace/ProjectCombobox.tsx
+  s_8ebe69eb7bb5c1::t_184a7fd26b038a 25-26,49,205,208-213
+src/renderer/src/components/new-workspace/NewWorkspaceComposerTargetNotices.tsx
+  s_8ebe69eb7bb5c1::t_61a68fed58b15c 1-98
+src/renderer/src/components/new-workspace/RunTargetCombobox.tsx
+  s_8ebe69eb7bb5c1::t_38107f409056f2 39,64,243
+  s_8ebe69eb7bb5c1::t_184a7fd26b038a 40,65-66,244
+src/renderer/src/components/new-workspace/RunTargetField.tsx
+  s_8ebe69eb7bb5c1::t_38107f409056f2 29,47,59
+  s_8ebe69eb7bb5c1::t_184a7fd26b038a 30-31,48-49,108-109,111-118
+src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptToolbar.tsx
+  s_8ebe69eb7bb5c1::t_30148f0847bbb1 1-101,103-106,112-122,124-128,130-141,143-165,167-174,180-185
+  s_8ebe69eb7bb5c1::t_af33fb4175a35c 107,129
+  s_8ebe69eb7bb5c1::t_869bd5d9cb6210 108-111
+  s_8ebe69eb7bb5c1::t_2ce21ddfe791ff 102
+  s_8ebe69eb7bb5c1::t_184a7fd26b038a 123,142
+  s_8ebe69eb7bb5c1::t_328d2653a588a5 166,175-179
+src/renderer/src/components/new-workspace/NewWorkspaceComposerFooter.tsx
+  s_8ebe69eb7bb5c1::t_643ca74933543e 2-3,5,11-23,29-35,56-63,76-77,91-92
+  s_8ebe69eb7bb5c1::t_da6c0ff09ebb3f 78-90
+src/renderer/src/components/settings/prompt-first-composer-search-entry.ts
+  s_8ebe69eb7bb5c1::t_643ca74933543e 1-42
+src/shared/global-settings-types.ts
+  s_8ebe69eb7bb5c1::t_643ca74933543e 478-479
+src/renderer/src/components/new-workspace/setup-decision-labels.ts
+  s_8ebe69eb7bb5c1::t_18123a80921ac3 1
+  s_8ebe69eb7bb5c1::t_d9a82c20ea41dd 2-37
+src/renderer/src/components/NewWorkspaceComposerCard.test.tsx
+  s_8ebe69eb7bb5c1::t_643ca74933543e 366-375,418,622-624,640,658,832
+src/renderer/src/components/settings/ExperimentalPane.tsx
+  s_8ebe69eb7bb5c1::t_643ca74933543e 56-59,273-310
+  s_8ebe69eb7bb5c1::t_ddb07675297cfb 311-317
+src/renderer/src/components/settings/experimental-search.ts
+  s_8ebe69eb7bb5c1::t_643ca74933543e 8,184,227-230
+  s_8ebe69eb7bb5c1::t_6465f6def34ff7 231-232
+src/shared/default-global-settings.ts
+  s_8ebe69eb7bb5c1::t_643ca74933543e 245
+src/shared/telemetry-property-schemas.ts
+  s_8ebe69eb7bb5c1::t_643ca74933543e 200
+src/renderer/src/app-shell/AppWorkspaceShell.tsx
+  s_8ebe69eb7bb5c1::t_e0da40ccb66669 93-98
+  s_8ebe69eb7bb5c1::t_5dec5eecd6a891 28
+  s_8ebe69eb7bb5c1::t_14fd76c58b5718 69-75,78
+src/renderer/src/lib/workspace-composer-pane-surface.ts
+  s_8ebe69eb7bb5c1::t_09a162f7107d5d 1-18
+src/renderer/src/app-shell/use-app-chrome-layout.ts
+  s_8ebe69eb7bb5c1::t_67d488e190c258 138
+  s_8ebe69eb7bb5c1::t_cc0b7905488ddf 149-150
+  s_8ebe69eb7bb5c1::t_045819d17823f9 74-79,81-84
+  s_8ebe69eb7bb5c1::t_ceda2e52094fbf 8
+  s_8ebe69eb7bb5c1::t_01a40377c18478 32
+src/renderer/src/lib/workspace-composer-pane-surface.test.ts
+  s_8ebe69eb7bb5c1::t_09a162f7107d5d 1-44
+src/renderer/src/components/NewWorkspaceComposerPane.tsx
+  s_8ebe69eb7bb5c1::t_0df0a2cf01d7ab 61
+  s_8ebe69eb7bb5c1::t_ae4588466b3896 68
+  s_8ebe69eb7bb5c1::t_4e80d981a8c9c8 1-60,62-67,69-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2c15eb2a856b530d313f650bc9f04dd7252cb8a0",
+  "prompts": {},
+  "sessions": {
+    "s_8ebe69eb7bb5c1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "08d20141-5292-409b-b691-a54ab3f3b6cb",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    },
+    "s_c175692950eef3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "33fea56e-e7e3-4388-9a23-aa2deb324c2e",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    },
+    "s_db3183ccd76183": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cdce3477-cbe5-4c97-a75a-70a21dce5266",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
