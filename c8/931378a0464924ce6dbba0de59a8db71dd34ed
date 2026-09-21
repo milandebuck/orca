@@ -1,0 +1,21 @@
+src/renderer/src/i18n/locales/en.json
+  s_beff0ba5750dd0::t_05384beb8fe75a 7159
+src/renderer/src/components/settings/ExperimentalPane.tsx
+  s_beff0ba5750dd0::t_05384beb8fe75a 298
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c8931378a0464924ce6dbba0de59a8db71dd34ed",
+  "prompts": {},
+  "sessions": {
+    "s_beff0ba5750dd0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f88eb0d-3e92-4010-b7ae-a4f3f53cc1fe",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": null
+    }
+  }
+}
