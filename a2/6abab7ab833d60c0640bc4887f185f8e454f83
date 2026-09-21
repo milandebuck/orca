@@ -1,0 +1,23 @@
+src/renderer/src/components/NewWorkspaceComposerPane.test.tsx
+  s_beff0ba5750dd0::t_c3fd2a5a39e3a6 3,7-12,14
+  s_beff0ba5750dd0::t_8247f850c15b67 1-2,4-6,13,15-116
+src/renderer/src/components/NewWorkspaceComposerPane.tsx
+  s_beff0ba5750dd0::t_7f66dbb983e2d1 45-47,50-55
+  s_beff0ba5750dd0::t_3b6a8435e826fd 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a26abab7ab833d60c0640bc4887f185f8e454f83",
+  "prompts": {},
+  "sessions": {
+    "s_beff0ba5750dd0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f88eb0d-3e92-4010-b7ae-a4f3f53cc1fe",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": null
+    }
+  }
+}
