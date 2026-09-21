@@ -1,0 +1,49 @@
+src/renderer/src/components/new-workspace/NewWorkspaceComposerFooter.tsx
+  s_8ebe69eb7bb5c1::t_38107f409056f2 9,15,36-37,50-51
+  s_8ebe69eb7bb5c1::t_0bb6b74301722e 8
+src/renderer/src/components/new-workspace/ProjectCombobox.tsx
+  s_8ebe69eb7bb5c1::t_184a7fd26b038a 25-26,49,205,208-213
+src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptSection.tsx
+  s_8ebe69eb7bb5c1::t_af33fb4175a35c 74
+  s_8ebe69eb7bb5c1::t_175691ad0dcdf5 11-12,15-18,25,42-67,69-71,73
+src/renderer/src/components/NewWorkspaceComposerCard.tsx
+  s_8ebe69eb7bb5c1::t_2ecd723c47c927 30-31,193-194,198-200,202,302,305-325,327-336,338-349,352-353
+  s_8ebe69eb7bb5c1::t_68431dcae96719 354
+src/renderer/src/i18n/locales/en.json
+  s_8ebe69eb7bb5c1::t_cb7af7d32868b5 1743
+src/renderer/src/components/new-workspace/NewWorkspaceComposerTargetNotices.tsx
+  s_8ebe69eb7bb5c1::t_61a68fed58b15c 1-98
+src/renderer/src/components/new-workspace/RunTargetCombobox.tsx
+  s_8ebe69eb7bb5c1::t_38107f409056f2 39,64,243
+  s_8ebe69eb7bb5c1::t_184a7fd26b038a 40,65-66,244
+src/renderer/src/components/new-workspace/RunTargetField.tsx
+  s_8ebe69eb7bb5c1::t_38107f409056f2 29,47,59
+  s_8ebe69eb7bb5c1::t_184a7fd26b038a 30-31,48-49,108-109,111-118
+src/renderer/src/components/NewWorkspaceComposerCard.test.tsx
+  s_8ebe69eb7bb5c1::t_0bb6b74301722e 611,627,645,819
+src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptToolbar.tsx
+  s_8ebe69eb7bb5c1::t_30148f0847bbb1 1-101,103-106,112-122,124-128,130-141,143-165,167-174,180-185
+  s_8ebe69eb7bb5c1::t_af33fb4175a35c 107,129
+  s_8ebe69eb7bb5c1::t_869bd5d9cb6210 108-111
+  s_8ebe69eb7bb5c1::t_2ce21ddfe791ff 102
+  s_8ebe69eb7bb5c1::t_184a7fd26b038a 123,142
+  s_8ebe69eb7bb5c1::t_328d2653a588a5 166,175-179
+src/renderer/src/i18n/en-runtime-required.json
+  s_8ebe69eb7bb5c1::t_f896bafa278a2e 91,95-96,98,105,111
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2cb5849d936a642a60398dc9183546bf878fec7d",
+  "prompts": {},
+  "sessions": {
+    "s_8ebe69eb7bb5c1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "08d20141-5292-409b-b691-a54ab3f3b6cb",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
