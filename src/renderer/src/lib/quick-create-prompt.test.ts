@@ -23,6 +23,16 @@ describe('resolveQuickCreatePrompt', () => {
     ).toEqual({ prompt: 'fix the flaky test', draftPrompt: null })
   })
 
+  it('keeps the note of a Linear typed-only item that has no draft context', () => {
+    expect(
+      resolveQuickCreatePrompt({
+        typedPrompt: 'fix it',
+        linkedWorkItem: { number: 0, url: '' },
+        note: 'be careful'
+      })
+    ).toEqual({ prompt: 'fix it\n\nbe careful', draftPrompt: null })
+  })
+
   it('appends linked-item context to a typed prompt', () => {
     expect(
       resolveQuickCreatePrompt({ typedPrompt: 'fix it', linkedWorkItem: issue, note: 'be careful' })

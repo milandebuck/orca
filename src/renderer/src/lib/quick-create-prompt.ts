@@ -21,9 +21,10 @@ export function resolveQuickCreatePrompt({
   if (!trimmedPrompt) {
     return linked
   }
-  // Why: a typed prompt is an instruction, so it auto-submits; linked-item context rides along in the same message.
+  // Why: a typed prompt is an instruction, so it auto-submits; linked-item context rides along in the
+  // same message. A Linear typed-only item carries its note in `prompt` rather than `draftPrompt`.
   return {
-    prompt: [trimmedPrompt, linked.draftPrompt].filter(Boolean).join('\n\n'),
+    prompt: [trimmedPrompt, linked.draftPrompt ?? linked.prompt].filter(Boolean).join('\n\n'),
     draftPrompt: null
   }
 }
