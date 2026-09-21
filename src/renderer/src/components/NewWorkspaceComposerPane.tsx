@@ -56,7 +56,7 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
 
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto scrollbar-sleek">
-      <div ref={containerRef} className="my-auto flex w-full flex-col gap-4 px-8 py-10">
+      <div ref={containerRef} className="mt-auto flex w-full flex-col gap-4 px-8 pb-6 pt-10">
         <WorkspaceComposerBody
           modalData={modalData ?? {}}
           onClose={closeComposer}
