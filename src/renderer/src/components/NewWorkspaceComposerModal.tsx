@@ -1,5 +1,6 @@
 import React, { Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useAppStore } from '@/store'
+import { cn } from '@/lib/utils'
 import { lazyWithRetry } from '@/lib/lazy-with-retry'
 import {
   Dialog,
@@ -36,6 +37,7 @@ const HostedAddRepoDialog = lazyWithRetry(() => import('@/components/sidebar/Add
 
 type ComposerModalData = {
   prefilledName?: string
+  initialPrompt?: string
   initialRepoId?: string
   initialEphemeralVmRecipeId?: string
   initialProjectGroupId?: string
@@ -73,6 +75,7 @@ function ComposerModalBody({
   modalData: ComposerModalData
   onClose: () => void
 }): React.JSX.Element {
+  const promptFirst = useAppStore((s) => s.settings?.experimentalPromptFirstComposer === true)
   const submitCancelledRef = useRef(false)
   const handleDismiss = useCallback(() => {
     submitCancelledRef.current = true
@@ -83,7 +86,10 @@ function ComposerModalBody({
   return (
     <Dialog open onOpenChange={(open) => !open && handleDismiss()}>
       <DialogContent
-        className="flex max-h-[calc(100vh-2rem)] flex-col overflow-hidden sm:max-w-lg"
+        className={cn(
+          'flex max-h-[calc(100vh-2rem)] flex-col overflow-hidden',
+          promptFirst ? 'sm:max-w-2xl' : 'sm:max-w-lg'
+        )}
         onOpenAutoFocus={(event) => {
           // Why: Radix's FocusScope fires this once the dialog has mounted.
           // preventDefault stops it from focusing whatever first-tabbable it
@@ -117,6 +123,8 @@ function QuickTabBody({
   active: boolean
 }): React.JSX.Element {
   const settings = useAppStore((s) => s.settings)
+  // Why: the classic form has no prompt field, so a prefilled prompt would be sent without ever being shown.
+  const promptFirst = settings?.experimentalPromptFirstComposer === true
   const {
     cardProps,
     composerRef,
@@ -127,9 +135,7 @@ function QuickTabBody({
     selectAddedProjectRepo
   } = useComposerState({
     initialName: modalData.prefilledName ?? '',
-    // Why: the modal is quick-create only now, so prompt-prefill state is
-    // intentionally ignored even if older callers still send it.
-    initialPrompt: '',
+    initialPrompt: promptFirst ? (modalData.initialPrompt ?? '') : '',
     initialLinkedWorkItem: modalData.linkedWorkItem ?? null,
     initialGitHubWorkItem: modalData.initialGitHubWorkItem ?? null,
     initialTaskSourceContext: modalData.taskSourceContext ?? null,

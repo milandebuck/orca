@@ -189,6 +189,7 @@ export function useComposerSubmitOrchestration(
     smartNameMode: target.workspaceIdentityState.smartNameMode
   })
   const quickCreationExecution = useQuickCreationExecution({
+    agentPrompt: target.sourceContextState.agentPrompt,
     clearNewWorkspaceDraft: target.composerTargetStore.clearNewWorkspaceDraft,
     createMultiple: target.asyncComposerState.createMultiple,
     effectivePresetId: target.derivedComposerState.effectivePresetId,
@@ -219,6 +220,7 @@ export function useComposerSubmitOrchestration(
     telemetrySource: target.composerTargetStore.telemetrySource
   })
   const quickSubmitAction = useQuickSubmitAction({
+    agentPrompt: target.sourceContextState.agentPrompt,
     effectiveLinkedPR: target.derivedComposerState.effectiveLinkedPR,
     executeQuickCreation: quickCreationExecution.executeQuickCreation,
     fallbackCreatureName: target.derivedComposerState.fallbackCreatureName,
