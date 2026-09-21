@@ -112,6 +112,22 @@ describe('NewWorkspaceComposerCard prompt', () => {
     expect(onCreate).toHaveBeenCalledTimes(1)
   })
 
+  it('leaves Cmd/Ctrl+Enter to the screen-level submit shortcut', async () => {
+    const onCreate = vi.fn()
+    const container = await renderCard({ quickAgent: 'claude', onCreate })
+    const prompt = getPromptInput(container)
+    pressEnter(prompt, { metaKey: true })
+    pressEnter(prompt, { ctrlKey: true })
+    expect(onCreate).not.toHaveBeenCalled()
+  })
+
+  it('does not submit the Enter that confirms an IME composition', async () => {
+    const onCreate = vi.fn()
+    const container = await renderCard({ quickAgent: 'claude', onCreate })
+    pressEnter(getPromptInput(container), { isComposing: true })
+    expect(onCreate).not.toHaveBeenCalled()
+  })
+
   it('does not submit while creation is disabled', async () => {
     const onCreate = vi.fn()
     const container = await renderCard({ quickAgent: 'claude', onCreate, createDisabled: true })
