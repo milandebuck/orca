@@ -1,0 +1,21 @@
+src/renderer/src/app-shell/use-app-chrome-layout.ts
+  s_8ebe69eb7bb5c1::t_df48d4c97ac9c5 149
+src/renderer/src/components/NewWorkspaceComposerPane.tsx
+  s_8ebe69eb7bb5c1::t_97d91d2f018865 59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "db100e775afc22f1a18e1c0bdeb0b781b9a3436e",
+  "prompts": {},
+  "sessions": {
+    "s_8ebe69eb7bb5c1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "08d20141-5292-409b-b691-a54ab3f3b6cb",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
