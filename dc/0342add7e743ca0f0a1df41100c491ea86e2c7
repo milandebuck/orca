@@ -1,0 +1,19 @@
+src/renderer/src/components/NewWorkspaceComposerPane.tsx
+  s_8ebe69eb7bb5c1::t_28bb27991dcb58 59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "dc0342add7e743ca0f0a1df41100c491ea86e2c7",
+  "prompts": {},
+  "sessions": {
+    "s_8ebe69eb7bb5c1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "08d20141-5292-409b-b691-a54ab3f3b6cb",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
