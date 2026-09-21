@@ -1,0 +1,51 @@
+src/renderer/src/components/NewWorkspaceComposerCard.tsx
+  s_db3183ccd76183::t_d39e10f6a745d5 31,301,303,305-347
+src/renderer/src/components/NewWorkspaceComposerModal.tsx
+  s_c175692950eef3::t_62e874fabac946 39,87,131
+src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptSection.tsx
+  s_c175692950eef3::t_7f98885dc6037f 1-80
+src/renderer/src/components/new-workspace/new-workspace-composer-card-props.ts
+  s_c175692950eef3::t_0ba01b49b0322f 64-65
+src/renderer/src/hooks/composer-state/composer-submit-orchestration.ts
+  s_c175692950eef3::t_a40adfba43294d 192,223
+src/renderer/src/hooks/composer-state/quick-creation-execution.ts
+  s_c175692950eef3::t_6f6e98ea64cbc4 5,46,54,128-132,284
+src/renderer/src/hooks/composer-state/quick-submit-action.ts
+  s_c175692950eef3::t_6936aae05cb7c1 18,45,79,163
+src/renderer/src/i18n/locales/en.json
+  s_c175692950eef3::t_f495db4efed36a 1740-1744
+src/renderer/src/lib/linked-work-item-context.ts
+  s_c175692950eef3::t_74533fec572877 202-215,217
+src/renderer/src/lib/quick-create-prompt.test.ts
+  s_c175692950eef3::t_f6b7f35c2671db 1-31
+src/renderer/src/lib/quick-create-prompt.ts
+  s_c175692950eef3::t_2797f691227079 1-29
+src/renderer/src/lib/workspace-composer-initial-focus.test.ts
+  s_c175692950eef3::t_8e0ac1dd957222 7-18
+src/renderer/src/lib/workspace-composer-initial-focus.ts
+  s_c175692950eef3::t_24d74bae8299e7 1,12,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fc70c6e3824287bad0e9cb69b06f1ad33e83006c",
+  "prompts": {},
+  "sessions": {
+    "s_c175692950eef3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "33fea56e-e7e3-4388-9a23-aa2deb324c2e",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    },
+    "s_db3183ccd76183": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cdce3477-cbe5-4c97-a75a-70a21dce5266",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
