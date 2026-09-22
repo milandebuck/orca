@@ -1,0 +1,19 @@
+src/renderer/src/hooks/useComposerState-host-context-boundaries.test.ts
+  s_c6d177fc9b3377::t_48f710524f07dc 700-702
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0c70b608ba35b162228813d2c588bbd03e7fd510",
+  "prompts": {},
+  "sessions": {
+    "s_c6d177fc9b3377": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2bb8da72-c11b-46a9-b09f-e2e437049543",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
