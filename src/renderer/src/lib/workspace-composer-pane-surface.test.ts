@@ -7,7 +7,8 @@ describe('shouldShowWorkspaceComposerPane', () => {
       shouldShowWorkspaceComposerPane({
         activeView: 'terminal',
         activeModal: 'new-workspace-composer',
-        promptFirstComposer: true
+        promptFirstComposer: true,
+        creationSurfaceActive: false
       })
     ).toBe(true)
   })
@@ -17,7 +18,8 @@ describe('shouldShowWorkspaceComposerPane', () => {
       shouldShowWorkspaceComposerPane({
         activeView: 'terminal',
         activeModal: 'new-workspace-composer',
-        promptFirstComposer: false
+        promptFirstComposer: false,
+        creationSurfaceActive: false
       })
     ).toBe(false)
   })
@@ -27,7 +29,19 @@ describe('shouldShowWorkspaceComposerPane', () => {
       shouldShowWorkspaceComposerPane({
         activeView: 'settings',
         activeModal: 'new-workspace-composer',
-        promptFirstComposer: true
+        promptFirstComposer: true,
+        creationSurfaceActive: false
+      })
+    ).toBe(false)
+  })
+
+  it('keeps the dialog while a worktree creation panel owns the center pane', () => {
+    expect(
+      shouldShowWorkspaceComposerPane({
+        activeView: 'terminal',
+        activeModal: 'new-workspace-composer',
+        promptFirstComposer: true,
+        creationSurfaceActive: true
       })
     ).toBe(false)
   })
@@ -37,7 +51,8 @@ describe('shouldShowWorkspaceComposerPane', () => {
       shouldShowWorkspaceComposerPane({
         activeView: 'terminal',
         activeModal: 'none',
-        promptFirstComposer: true
+        promptFirstComposer: true,
+        creationSurfaceActive: false
       })
     ).toBe(false)
   })

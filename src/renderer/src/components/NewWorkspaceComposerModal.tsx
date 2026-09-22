@@ -28,6 +28,7 @@ import type { TaskSourceContext } from '../../../shared/task-source-context'
 import { translate } from '@/i18n/i18n'
 import { getWorkspaceComposerInitialFocusTarget } from '@/lib/workspace-composer-initial-focus'
 import { shouldShowWorkspaceComposerPane } from '@/lib/workspace-composer-pane-surface'
+import { shouldShowWorktreeCreationSurface } from '@/lib/worktree-creation-surface'
 import { getFolderWorkspacePrimaryActionLabel } from '@/components/sidebar/folder-workspace-composer-helpers'
 
 // Why: match App-level AddRepoDialog loading — the add flow is off the hot
@@ -66,7 +67,14 @@ export default function NewWorkspaceComposerModal(): React.JSX.Element | null {
     shouldShowWorkspaceComposerPane({
       activeView: s.activeView,
       activeModal: s.activeModal,
-      promptFirstComposer: s.settings?.experimentalPromptFirstComposer === true
+      promptFirstComposer: s.settings?.experimentalPromptFirstComposer === true,
+      creationSurfaceActive: shouldShowWorktreeCreationSurface({
+        activeView: s.activeView,
+        activePendingCreationId: s.activePendingCreationId,
+        hasActivePendingCreation:
+          s.activePendingCreationId !== null &&
+          s.pendingWorktreeCreations[s.activePendingCreationId] !== undefined
+      })
     })
   )
 

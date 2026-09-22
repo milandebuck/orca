@@ -75,7 +75,8 @@ export function useAppChromeLayout() {
   const composerPaneActive = shouldShowWorkspaceComposerPane({
     activeView,
     activeModal,
-    promptFirstComposer: settings?.experimentalPromptFirstComposer === true
+    promptFirstComposer: settings?.experimentalPromptFirstComposer === true,
+    creationSurfaceActive: creationLayoutActive
   })
   const workspaceChromeActive =
     activeView === 'terminal' &&
