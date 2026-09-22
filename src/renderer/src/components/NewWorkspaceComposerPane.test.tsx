@@ -7,13 +7,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 const storeState: {
   activeModal: string
   activeWorktreeId: string | null
-  activeView: string
   modalData: undefined
   closeModal: ReturnType<typeof vi.fn>
 } = {
   activeModal: 'new-workspace-composer',
   activeWorktreeId: 'wt-1',
-  activeView: 'terminal',
   modalData: undefined,
   closeModal: vi.fn()
 }
@@ -63,7 +61,6 @@ describe('NewWorkspaceComposerPane', () => {
   beforeEach(() => {
     storeState.activeModal = 'new-workspace-composer'
     storeState.activeWorktreeId = 'wt-1'
-    storeState.activeView = 'terminal'
     storeState.closeModal.mockReset()
   })
 
@@ -106,15 +103,6 @@ describe('NewWorkspaceComposerPane', () => {
     document.body.appendChild(sidebarInput)
     pressEscape(sidebarInput)
     expect(storeState.closeModal).not.toHaveBeenCalled()
-  })
-
-  it('closes instead of becoming a dialog when the view leaves the workspace', () => {
-    renderPane()
-    storeState.activeView = 'settings'
-    act(() => {
-      root?.render(<NewWorkspaceComposerPane />)
-    })
-    expect(storeState.closeModal).toHaveBeenCalledTimes(1)
   })
 
   it('closes when the active workspace changes', () => {

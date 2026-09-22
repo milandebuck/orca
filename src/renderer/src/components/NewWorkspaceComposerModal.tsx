@@ -29,6 +29,7 @@ import { translate } from '@/i18n/i18n'
 import { getWorkspaceComposerInitialFocusTarget } from '@/lib/workspace-composer-initial-focus'
 import { shouldShowWorkspaceComposerPane } from '@/lib/workspace-composer-pane-surface'
 import { shouldShowWorktreeCreationSurface } from '@/lib/worktree-creation-surface'
+import { useComposerPaneHandoff } from '@/components/new-workspace/use-composer-pane-handoff'
 import { getFolderWorkspacePrimaryActionLabel } from '@/components/sidebar/folder-workspace-composer-helpers'
 
 // Why: match App-level AddRepoDialog loading — the add flow is off the hot
@@ -78,7 +79,15 @@ export default function NewWorkspaceComposerModal(): React.JSX.Element | null {
     })
   )
 
-  if (!visible || paneActive) {
+  // Why: leaving the workspace view while the pane hosts the composer dismisses it instead of
+  // re-hosting it here as an empty dialog.
+  const handingOff = useComposerPaneHandoff({
+    composerOpen: visible,
+    paneActive,
+    closeComposer: closeModal
+  })
+
+  if (!visible || paneActive || handingOff) {
     return null
   }
 

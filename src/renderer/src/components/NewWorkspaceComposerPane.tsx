@@ -15,7 +15,6 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
   const modalData = useAppStore((s) => s.modalData as ComposerModalData | undefined)
   const closeModal = useAppStore((s) => s.closeModal)
   const activeWorktreeId = useAppStore((s) => s.activeWorktreeId)
-  const activeView = useAppStore((s) => s.activeView)
   const containerRef = useRef<HTMLDivElement | null>(null)
   const submitCancelledRef = useRef(false)
   const isSubmissionCancelled = useCallback(() => submitCancelledRef.current, [])
@@ -35,14 +34,14 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
     })
   }, [])
 
-  // Why: the pane is not modal, so switching workspaces in the sidebar leaves it behind, and
-  // leaving the workspace view would otherwise re-host the still-open modal as an empty dialog.
+  // Why: the pane is not modal, so switching workspaces in the sidebar leaves it behind.
+  // Leaving the workspace view is handled by the dialog host, which outlives this pane.
   const openedForWorktreeRef = useRef(activeWorktreeId)
   useEffect(() => {
-    if (activeWorktreeId !== openedForWorktreeRef.current || activeView !== 'terminal') {
+    if (activeWorktreeId !== openedForWorktreeRef.current) {
       dismiss()
     }
-  }, [activeView, activeWorktreeId, dismiss])
+  }, [activeWorktreeId, dismiss])
 
   // Why: no dismissable layer here; nested Radix layers preventDefault Escape before it bubbles,
   // and listening on window (after document) is what lets us see that. Escape typed into the
