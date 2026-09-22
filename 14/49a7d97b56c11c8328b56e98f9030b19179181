@@ -1,0 +1,25 @@
+src/renderer/src/lib/workspace-composer-pane-surface.ts
+  s_b1f76728fb0bbd::t_058a82d386e386 7-8,11-15,19-20,23-26
+src/renderer/src/lib/workspace-composer-pane-surface.test.ts
+  s_b1f76728fb0bbd::t_058a82d386e386 10-11,21-22,32-44,54-55
+src/renderer/src/components/NewWorkspaceComposerModal.tsx
+  s_b1f76728fb0bbd::t_058a82d386e386 31,70-77
+src/renderer/src/app-shell/use-app-chrome-layout.ts
+  s_b1f76728fb0bbd::t_058a82d386e386 78-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "1449a7d97b56c11c8328b56e98f9030b19179181",
+  "prompts": {},
+  "sessions": {
+    "s_b1f76728fb0bbd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "12ea921c-69e9-45b0-af19-f676496fec59",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
