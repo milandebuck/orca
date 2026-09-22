@@ -25,7 +25,7 @@ export function NewWorkspaceComposerPromptSection({
   toolbar
 }: NewWorkspaceComposerPromptSectionProps): React.JSX.Element {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>): void => {
-    if (event.key !== 'Enter' || event.metaKey || event.ctrlKey) {
+    if (event.key !== 'Enter' || event.metaKey || event.ctrlKey || event.altKey) {
       return
     }
     if (shouldSuppressEnterSubmit(event.nativeEvent, true)) {

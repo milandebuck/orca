@@ -121,6 +121,13 @@ describe('NewWorkspaceComposerCard prompt', () => {
     expect(onCreate).not.toHaveBeenCalled()
   })
 
+  it('ignores Alt+Enter like the screen-level submit shortcut does', async () => {
+    const onCreate = vi.fn()
+    const container = await renderCard({ quickAgent: 'claude', onCreate })
+    pressEnter(getPromptInput(container), { altKey: true })
+    expect(onCreate).not.toHaveBeenCalled()
+  })
+
   it('does not submit the Enter that confirms an IME composition', async () => {
     const onCreate = vi.fn()
     const container = await renderCard({ quickAgent: 'claude', onCreate })
