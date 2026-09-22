@@ -1,0 +1,21 @@
+src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptSection.tsx
+  s_b1f76728fb0bbd::t_ae282641a040b6 28
+src/renderer/src/components/NewWorkspaceComposerCard.prompt.test.tsx
+  s_b1f76728fb0bbd::t_ae282641a040b6 124-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3318e1eb372c5ff69f7a1761e92e09ad63abe40c",
+  "prompts": {},
+  "sessions": {
+    "s_b1f76728fb0bbd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "12ea921c-69e9-45b0-af19-f676496fec59",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
