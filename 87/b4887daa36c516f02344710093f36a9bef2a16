@@ -1,0 +1,25 @@
+src/renderer/src/components/new-workspace/use-composer-pane-handoff.test.tsx
+  s_b1f76728fb0bbd::t_5788d51110ff52 1-57
+src/renderer/src/components/new-workspace/use-composer-pane-handoff.ts
+  s_b1f76728fb0bbd::t_5788d51110ff52 1-34
+src/renderer/src/components/NewWorkspaceComposerModal.tsx
+  s_b1f76728fb0bbd::t_5788d51110ff52 32,82-90
+src/renderer/src/components/NewWorkspaceComposerPane.tsx
+  s_b1f76728fb0bbd::t_5788d51110ff52 37-38,41,44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "87b4887daa36c516f02344710093f36a9bef2a16",
+  "prompts": {},
+  "sessions": {
+    "s_b1f76728fb0bbd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "12ea921c-69e9-45b0-af19-f676496fec59",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
