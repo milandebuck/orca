@@ -1,0 +1,26 @@
+src/renderer/src/components/sidebar/folder-workspace-composer-submit.ts
+  s_b1f76728fb0bbd::t_bddc42f291aa8a 9,55-56,78,106-112,114,130,144-146,155,168
+src/renderer/src/hooks/composer-state/composer-submit-orchestration.ts
+  s_b1f76728fb0bbd::t_bddc42f291aa8a 22
+src/renderer/src/hooks/composer-state/folder-submit-orchestration.ts
+  s_b1f76728fb0bbd::t_bddc42f291aa8a 5,54,112,114,124
+  s_b1f76728fb0bbd::t_8db377ebf69c87 190
+src/renderer/src/components/sidebar/folder-workspace-composer-submit.typed-prompt.test.ts
+  s_b1f76728fb0bbd::t_ad13cc83a71509 1-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "58d5cd37163f9d83993853e91fc6741cabb58f19",
+  "prompts": {},
+  "sessions": {
+    "s_b1f76728fb0bbd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "12ea921c-69e9-45b0-af19-f676496fec59",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
