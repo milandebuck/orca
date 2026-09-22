@@ -1,4 +1,5 @@
-const WORKSPACE_PROMPT_INPUT_SELECTOR = '[data-workspace-prompt-input="true"]'
+// Why: with no agent picked the prompt is disabled; focus() on it is a no-op and blocks the fallbacks.
+const WORKSPACE_PROMPT_INPUT_SELECTOR = '[data-workspace-prompt-input="true"]:not(:disabled)'
 const WORKSPACE_NAME_INPUT_SELECTOR = '[data-workspace-name-input="true"]'
 const WORKSPACE_SOURCE_PILL_SELECTOR = '[data-workspace-source-pill="true"]'
 const PROJECT_COMBOBOX_TRIGGER_SELECTOR = '[data-project-combobox-root="true"][role="combobox"]'
