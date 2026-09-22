@@ -1,0 +1,21 @@
+src/renderer/src/lib/workspace-composer-initial-focus.test.ts
+  s_b1f76728fb0bbd::t_ae282641a040b6 19-30
+src/renderer/src/lib/workspace-composer-initial-focus.ts
+  s_b1f76728fb0bbd::t_ae282641a040b6 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d68af5e6c277bfbaa4c1aae30a4d95b6d8944235",
+  "prompts": {},
+  "sessions": {
+    "s_b1f76728fb0bbd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "12ea921c-69e9-45b0-af19-f676496fec59",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
