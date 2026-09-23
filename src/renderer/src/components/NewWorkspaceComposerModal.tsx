@@ -78,12 +78,14 @@ export default function NewWorkspaceComposerModal(): React.JSX.Element | null {
       })
     })
   )
+  const workspaceViewActive = useAppStore((s) => s.activeView === 'terminal')
 
   // Why: leaving the workspace view while the pane hosts the composer dismisses it instead of
   // re-hosting it here as an empty dialog.
   const handingOff = useComposerPaneHandoff({
     composerOpen: visible,
     paneActive,
+    workspaceViewActive,
     closeComposer: closeModal
   })
 
