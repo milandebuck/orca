@@ -1,5 +1,6 @@
 import React from 'react'
-import { Textarea } from '@/components/ui/textarea'
+import { cn } from '@/lib/utils'
+import { ImeTextarea } from '@/lib/ime-text-field'
 import { translate } from '@/i18n/i18n'
 import { isImeOwnedKeyboardEvent } from '@/lib/ime-composition-keyboard-event'
 import type { NewWorkspaceComposerCardProps } from './new-workspace-composer-card-props'
@@ -7,14 +8,18 @@ import type { NewWorkspaceComposerCardProps } from './new-workspace-composer-car
 type NewWorkspaceComposerPromptSectionProps = Pick<
   NewWorkspaceComposerCardProps,
   'agentPrompt' | 'onAgentPromptChange' | 'quickAgent' | 'createDisabled' | 'onCreate'
->
+> & {
+  /** Compact controls rendered inside the box under the text, like the chat composer. */
+  toolbar: React.ReactNode
+}
 
 export function NewWorkspaceComposerPromptSection({
   agentPrompt = '',
   onAgentPromptChange,
   quickAgent,
   createDisabled,
-  onCreate
+  onCreate,
+  toolbar
 }: NewWorkspaceComposerPromptSectionProps): React.JSX.Element {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>): void => {
     if (event.key !== 'Enter' || event.metaKey || event.ctrlKey || event.altKey) {
@@ -31,26 +36,36 @@ export function NewWorkspaceComposerPromptSection({
   }
   const disabled = quickAgent === null
   return (
-    <Textarea
-      data-workspace-prompt-input="true"
-      aria-label={translate('auto.components.NewWorkspaceComposerCard.promptLabel', 'Prompt')}
-      value={agentPrompt}
-      disabled={disabled}
-      onChange={(event) => onAgentPromptChange?.(event.target.value)}
-      onKeyDown={handleKeyDown}
-      rows={3}
-      placeholder={
-        disabled
-          ? translate(
-              'auto.components.NewWorkspaceComposerCard.promptPlaceholderNoAgent',
-              'Pick an agent to send it a prompt'
-            )
-          : translate(
-              'auto.components.NewWorkspaceComposerCard.promptPlaceholder',
-              'What should the agent do in this worktree?'
-            )
-      }
-      className="max-h-40 min-h-0 resize-none"
-    />
+    <div
+      data-contextual-tour-target="workspace-creation-prompt"
+      className="rounded-lg border border-border bg-muted/50 p-1.5 shadow-xs dark:bg-input/40"
+    >
+      <ImeTextarea
+        data-workspace-prompt-input="true"
+        aria-label={translate('auto.components.NewWorkspaceComposerCard.promptLabel', 'Prompt')}
+        value={agentPrompt}
+        disabled={disabled}
+        onChange={(event) => onAgentPromptChange?.(event.target.value)}
+        onKeyDown={handleKeyDown}
+        rows={3}
+        placeholder={
+          disabled
+            ? translate(
+                'auto.components.NewWorkspaceComposerCard.promptPlaceholderNoAgent',
+                'Pick an agent to send it a prompt'
+              )
+            : translate(
+                'auto.components.NewWorkspaceComposerCard.promptPlaceholder',
+                'What should the agent do in this worktree?'
+              )
+        }
+        className={cn(
+          'min-h-24 w-full resize-none bg-transparent px-2 py-1 text-sm outline-none',
+          'max-h-[calc(8lh+0.5rem)] overflow-y-auto scrollbar-sleek',
+          'placeholder:text-muted-foreground/60 disabled:cursor-not-allowed disabled:opacity-50'
+        )}
+      />
+      <div className="flex items-center gap-1 pt-0.5">{toolbar}</div>
+    </div>
   )
 }

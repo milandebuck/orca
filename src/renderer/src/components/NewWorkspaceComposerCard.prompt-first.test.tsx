@@ -66,4 +66,17 @@ describe('NewWorkspaceComposerCard prompt-first setting', () => {
     container = await renderCard({ quickAgent: 'claude' })
     expect(container.querySelector(PROMPT_INPUT)).not.toBeNull()
   })
+  it('moves the create button into the prompt box while the setting is on', async () => {
+    settings.promptFirstComposer = true
+    container = await renderCard({ quickAgent: 'claude', primaryActionLabel: 'Create worktree' })
+    const createButtons = Array.from(container.querySelectorAll('button')).filter(
+      (button) =>
+        button.getAttribute('aria-label') === 'Create worktree' ||
+        button.textContent?.includes('Create worktree')
+    )
+    expect(createButtons).toHaveLength(1)
+    expect(
+      createButtons[0].closest('[data-contextual-tour-target="workspace-creation-prompt"]')
+    ).not.toBeNull()
+  })
 })

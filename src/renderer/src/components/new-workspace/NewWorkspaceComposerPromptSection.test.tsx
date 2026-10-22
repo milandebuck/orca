@@ -17,6 +17,7 @@ function renderPrompt(
       quickAgent="claude"
       createDisabled={false}
       onCreate={onCreate}
+      toolbar={null}
       {...overrides}
     />
   )
