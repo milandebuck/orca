@@ -229,9 +229,17 @@ function QuickTabBody({
     }
     await submitQuick(quickAgent, {
       setupOnly: quickSetupOnly,
-      launchChoice: launchSelection.choice
+      launchChoice: launchSelection.choice,
+      typedPrompt: cardProps.agentPrompt
     })
-  }, [createDisabled, quickAgent, launchSelection.choice, quickSetupOnly, submitQuick])
+  }, [
+    createDisabled,
+    quickAgent,
+    launchSelection.choice,
+    quickSetupOnly,
+    submitQuick,
+    cardProps.agentPrompt
+  ])
   // Layer Add Project without replacing the composer. Retain it for close animation and clone/scan cancellation; folder/non-Git navigation still tears down the modal.
   const [addProjectOpen, setAddProjectOpen] = useState(false)
   const [addProjectMounted, setAddProjectMounted] = useState(false)

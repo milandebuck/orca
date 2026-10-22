@@ -28,6 +28,7 @@ import { NewWorkspaceComposerAgentSection } from './new-workspace/NewWorkspaceCo
 import { NewWorkspaceComposerFooter } from './new-workspace/NewWorkspaceComposerFooter'
 import { NewWorkspaceComposerNameSection } from './new-workspace/NewWorkspaceComposerNameSection'
 import { NewWorkspaceComposerProjectSection } from './new-workspace/NewWorkspaceComposerProjectSection'
+import { NewWorkspaceComposerPromptSection } from './new-workspace/NewWorkspaceComposerPromptSection'
 import {
   EMPTY_EPHEMERAL_VM_RECIPES,
   EMPTY_PROJECT_HOST_SETUP_OPTIONS,
@@ -361,6 +362,10 @@ export default function NewWorkspaceComposerCard(
           visibleQuickAgents={visibleQuickAgents}
           defaultTuiAgent={defaultTuiAgent}
           handleSetDefaultAgent={handleSetDefaultAgent}
+        />
+        <NewWorkspaceComposerPromptSection
+          {...props}
+          createDisabled={props.createDisabled || sparseEditing}
         />
         <NewWorkspaceComposerAdvancedSection
           {...props}

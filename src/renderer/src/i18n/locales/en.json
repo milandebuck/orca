@@ -2550,7 +2550,10 @@
         "runCommandsNow": "Run commands now",
         "skipForNow": "Skip for now",
         "skipCommands": "Skip commands",
-        "connectProject": "Connect {{name}}"
+        "connectProject": "Connect {{name}}",
+        "promptLabel": "Prompt",
+        "promptPlaceholderNoAgent": "Pick an agent to send it a prompt",
+        "promptPlaceholder": "What should the agent do in this worktree?"
       },
       "NewWorkspaceComposerModal": {
         "createWorktree": "Create worktree",
