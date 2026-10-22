@@ -1,0 +1,36 @@
+src/renderer/src/i18n/locales/en.json
+  s_3af96af59d62d2::t_f07707ce505b3e 19905-19911
+src/renderer/src/components/settings/chat-behavior-search.ts
+  s_3af96af59d62d2::t_796039a28b2560 37-52
+src/shared/telemetry-property-schemas.ts
+  s_3af96af59d62d2::t_796039a28b2560 213-214
+src/shared/global-settings-types.ts
+  s_3af96af59d62d2::t_796039a28b2560 233-234
+src/renderer/src/components/settings/ChatBehaviorSetting.tsx
+  s_3af96af59d62d2::t_796039a28b2560 38,46,98-116
+src/shared/default-global-settings.ts
+  s_3af96af59d62d2::t_796039a28b2560 140
+src/renderer/src/components/settings/ChatBehaviorSetting.test.tsx
+  s_3af96af59d62d2::t_f07707ce505b3e 241-251
+src/renderer/src/components/NewWorkspaceComposerCard.tsx
+  s_3af96af59d62d2::t_796039a28b2560 98,344-349
+src/renderer/src/components/NewWorkspaceComposerCard.prompt-first.test.tsx
+  s_3af96af59d62d2::t_f07707ce505b3e 1-27,34-69
+  s_3af96af59d62d2::t_ef349939f0075a 28-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e9ac7a0fd99dfee1c2573c14263e2055a8014e6f",
+  "prompts": {},
+  "sessions": {
+    "s_3af96af59d62d2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9d202a1e-0f0b-4d80-a526-2609c6724227",
+        "model": "unknown"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
