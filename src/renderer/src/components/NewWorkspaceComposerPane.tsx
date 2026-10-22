@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef } from 'react'
+import { MessageSquare } from 'lucide-react'
 import { useAppStore } from '@/store'
 import { isImeOwnedKeyboardEvent } from '@/lib/ime-composition-keyboard-event'
 import { getWorkspaceComposerInitialFocusTarget } from '@/lib/workspace-composer-initial-focus'
@@ -15,9 +16,13 @@ function PaneComposerHeading({
   description: string
 }): React.JSX.Element {
   return (
-    <div className="space-y-1">
-      <h1 className="text-lg font-semibold">{title}</h1>
-      <p className="text-sm text-muted-foreground">{description}</p>
+    // Why: mirrors NativeChatEmptyState so the composer reads as the chat it is about to start.
+    <div className="flex flex-1 flex-col items-center justify-center gap-3 p-6 text-center">
+      <div className="flex size-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
+        <MessageSquare className="size-6" />
+      </div>
+      <h1 className="text-sm font-medium text-chat-foreground-strong">{title}</h1>
+      <p className="max-w-sm text-balance text-xs text-chat-foreground-faint">{description}</p>
     </div>
   )
 }
@@ -83,8 +88,11 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
   }, [dismiss])
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto scrollbar-sleek">
-      <div ref={containerRef} className="mt-auto flex w-full flex-col gap-4 px-8 pb-6 pt-10">
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-chat-canvas scrollbar-sleek">
+      <div
+        ref={containerRef}
+        className="mx-auto flex w-full max-w-(--chat-content-max-width) flex-1 flex-col px-3 pt-2 pb-4 sm:px-4"
+      >
         <WorkspaceComposerBody
           modalData={modalData ?? {}}
           onClose={closeComposer}

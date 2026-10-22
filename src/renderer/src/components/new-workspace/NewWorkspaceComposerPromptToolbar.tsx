@@ -105,7 +105,10 @@ export function NewWorkspaceComposerPromptToolbar({
   submitShortcutModifierLabel
 }: NewWorkspaceComposerPromptToolbarProps): React.JSX.Element {
   return (
-    <fieldset disabled={disabled} className="flex min-w-0 flex-1 items-center gap-1">
+    <fieldset
+      disabled={disabled}
+      className="flex min-w-0 flex-1 items-center gap-1 text-chat-foreground-faint"
+    >
       <Button
         type="button"
         variant="ghost"
@@ -171,7 +174,7 @@ export function NewWorkspaceComposerPromptToolbar({
                 : undefined
             }
             allowNarrowTrigger
-            triggerClassName="h-7 w-auto border-transparent bg-transparent text-muted-foreground shadow-none hover:bg-accent dark:bg-transparent"
+            triggerClassName="h-7 w-auto border-transparent bg-transparent text-chat-foreground-faint shadow-none hover:bg-accent dark:bg-transparent"
             onTriggerEnter={createDisabled ? undefined : onCreate}
           />
         </div>
@@ -181,8 +184,11 @@ export function NewWorkspaceComposerPromptToolbar({
               type="button"
               aria-label={primaryActionLabel}
               disabled={createDisabled}
+              // A press keeps focus in the prompt, like the chat composer's send button.
+              onMouseDown={(event) => event.preventDefault()}
               onClick={() => void onCreate()}
-              size="icon-sm"
+              size="icon"
+              className="size-8 pointer-coarse:size-10"
             >
               {creating ? (
                 <LoaderCircle className="size-4 animate-spin" />

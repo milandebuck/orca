@@ -38,7 +38,8 @@ export function NewWorkspaceComposerPromptSection({
   return (
     <div
       data-contextual-tour-target="workspace-creation-prompt"
-      className="rounded-lg border border-border bg-muted/50 p-1.5 shadow-xs dark:bg-input/40"
+      // Why: the same frame as the native chat composer, since the prompt becomes its first message.
+      className="rounded-xl border border-chat-composer-border bg-chat-composer-surface p-1.5 shadow-xs"
     >
       <ImeTextarea
         data-workspace-prompt-input="true"
@@ -60,9 +61,9 @@ export function NewWorkspaceComposerPromptSection({
               )
         }
         className={cn(
-          'min-h-24 w-full resize-none bg-transparent px-2 py-1 text-sm outline-none',
+          'min-h-12 w-full resize-none bg-transparent px-2 py-1 text-sm text-chat-foreground-strong outline-none pointer-coarse:min-h-14',
           'max-h-[calc(8lh+0.5rem)] overflow-y-auto scrollbar-sleek',
-          'placeholder:text-muted-foreground/60 disabled:cursor-not-allowed disabled:opacity-50'
+          'placeholder:text-chat-foreground-faint disabled:cursor-not-allowed disabled:opacity-50'
         )}
       />
       <div className="flex items-center gap-1 pt-0.5">{toolbar}</div>
