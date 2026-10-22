@@ -211,6 +211,8 @@ export type GlobalSettings = GlobalSettingsBase & {
   nativeChatResumeWorkOnRestart?: boolean
   /** Queue editable mid-turn follow-ups until turn end on capable hosts. Absent means on; off sends immediately. */
   nativeChatQueueFollowUps?: boolean
+  /** New-workspace composer opens on a prompt box whose text becomes the agent's first message. */
+  promptFirstComposer?: boolean
   /** Teach newly started native chats to create inline visuals; absent means on. */
   nativeChatInlineVisuals?: boolean
   /** Structured Codex/Claude chats inherit the login-shell env; off limits it to nativeChatShellEnvironmentVariables plus PATH/locale. */

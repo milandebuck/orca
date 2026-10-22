@@ -93,6 +93,7 @@ export default function NewWorkspaceComposerCard(
   const openModal = useAppStore((state) => state.openModal)
   const activeModal = useAppStore((state) => state.activeModal)
   const defaultTuiAgent = useAppStore((state) => state.settings?.defaultTuiAgent ?? null)
+  const promptFirst = useAppStore((state) => state.settings?.promptFirstComposer === true)
   const disabledTuiAgents = useAppStore(
     (state) => state.settings?.disabledTuiAgents ?? DEFAULT_DISABLED_TUI_AGENTS
   )
@@ -363,10 +364,12 @@ export default function NewWorkspaceComposerCard(
           defaultTuiAgent={defaultTuiAgent}
           handleSetDefaultAgent={handleSetDefaultAgent}
         />
-        <NewWorkspaceComposerPromptSection
-          {...props}
-          createDisabled={props.createDisabled || sparseEditing}
-        />
+        {promptFirst ? (
+          <NewWorkspaceComposerPromptSection
+            {...props}
+            createDisabled={props.createDisabled || sparseEditing}
+          />
+        ) : null}
         <NewWorkspaceComposerAdvancedSection
           {...props}
           onSparseEditingChange={setSparseEditing}
