@@ -1,0 +1,79 @@
+src/shared/telemetry-property-schemas.ts
+  s_3af96af59d62d2::t_796039a28b2560 213-214
+src/shared/global-settings-types.ts
+  s_3af96af59d62d2::t_796039a28b2560 233-234
+src/shared/default-global-settings.ts
+  s_3af96af59d62d2::t_796039a28b2560 140
+src/renderer/src/components/NewWorkspaceComposerCard.tsx
+  s_3af96af59d62d2::t_796039a28b2560 101,326
+  s_3af96af59d62d2::t_504e9d8c241c97 32-33,42,153,189-191,195-200,203,281-298,327-372,378,392
+src/renderer/src/components/NewWorkspaceComposerCard.prompt-first.test.tsx
+  s_3af96af59d62d2::t_f07707ce505b3e 1-27,34-68,82
+  s_3af96af59d62d2::t_ef349939f0075a 28-33
+  s_3af96af59d62d2::t_85d35d50ea434a 69-71,77-81
+  s_3af96af59d62d2::t_2fcf884b843562 72-76
+src/renderer/src/components/new-workspace/setup-decision-labels.ts
+  s_3af96af59d62d2::t_b549bcc8c183eb 1-37
+src/renderer/src/components/new-workspace/use-composer-pane-handoff.ts
+  s_3af96af59d62d2::t_b549bcc8c183eb 1-38
+src/renderer/src/components/new-workspace/use-composer-pane-handoff.test.tsx
+  s_3af96af59d62d2::t_b549bcc8c183eb 1-95
+src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptToolbar.tsx
+  s_3af96af59d62d2::t_f3ab0bf2f35138 1-206
+src/renderer/src/components/NewWorkspaceComposerModal.tsx
+  s_3af96af59d62d2::t_8d5973be8ee17c 146,153-167,174,181,380-382,387-389,392-393
+  s_3af96af59d62d2::t_f4be05c8113f5f 4,31-33,45,70-93,95,109,122-125,141,168-169,173,175,182-183,390-391,398
+src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptSection.tsx
+  s_3af96af59d62d2::t_8d5973be8ee17c 2-3,43,62-66
+  s_3af96af59d62d2::t_90bbbc040d81df 13-14,22,45,54-55,58-59
+  s_3af96af59d62d2::t_46699b17380bc5 11-12,21,39-42,44,46-53,56-57,60-61,67-69
+src/renderer/src/app-shell/AppWorkspaceShell.tsx
+  s_3af96af59d62d2::t_bd66c849a43dd3 28,69-75,78,93-98
+src/renderer/src/components/new-workspace/RunTargetField.tsx
+  s_3af96af59d62d2::t_2f6f62418f456e 30-32,48-50,60,109-110,112-119
+src/renderer/src/components/new-workspace/NewWorkspaceComposerProjectSection.tsx
+  s_3af96af59d62d2::t_19aede9d0a4a78 2,14-18,137-142,163,165-176
+src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptSection.test.tsx
+  s_3af96af59d62d2::t_46699b17380bc5 20
+src/renderer/src/app-shell/use-app-chrome-layout.ts
+  s_3af96af59d62d2::t_bd66c849a43dd3 8,33,81-87,89-92,146
+src/renderer/src/components/new-workspace/ProjectCombobox.tsx
+  s_3af96af59d62d2::t_2f6f62418f456e 26-27,50,206,209-214
+src/renderer/src/components/NewWorkspaceComposerPane.tsx
+  s_3af96af59d62d2::t_b549bcc8c183eb 1-9,25-68,73-93,95-99
+  s_3af96af59d62d2::t_8d5973be8ee17c 10-24,94
+  s_3af96af59d62d2::t_bd66c849a43dd3 69-72
+src/renderer/src/lib/workspace-composer-initial-focus.test.ts
+  s_3af96af59d62d2::t_2f6f62418f456e 7-30
+src/renderer/src/lib/workspace-composer-pane-surface.test.ts
+  s_3af96af59d62d2::t_b549bcc8c183eb 1-15,17-59
+  s_3af96af59d62d2::t_71544c6b99fe2d 16
+src/renderer/src/components/new-workspace/RunTargetCombobox.tsx
+  s_3af96af59d62d2::t_2f6f62418f456e 38-39,64-66,249-250
+src/renderer/src/components/new-workspace/NewWorkspaceComposerFooter.tsx
+  s_3af96af59d62d2::t_b549bcc8c183eb 22-23,35-36,60-61,78-89
+src/renderer/src/components/NewWorkspaceComposerPane.test.tsx
+  s_3af96af59d62d2::t_b549bcc8c183eb 1-116
+src/renderer/src/lib/workspace-composer-pane-surface.ts
+  s_3af96af59d62d2::t_b549bcc8c183eb 1-28
+src/renderer/src/lib/workspace-composer-initial-focus.ts
+  s_3af96af59d62d2::t_2f6f62418f456e 1-2,13,15
+src/renderer/src/components/new-workspace/NewWorkspaceComposerTargetNotices.tsx
+  s_3af96af59d62d2::t_b549bcc8c183eb 1-133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e11af5a4b75d9f1fedf4f711f06d1d7553a3a0a3",
+  "prompts": {},
+  "sessions": {
+    "s_3af96af59d62d2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9d202a1e-0f0b-4d80-a526-2609c6724227",
+        "model": "unknown"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
