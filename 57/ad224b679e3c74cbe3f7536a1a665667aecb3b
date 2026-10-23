@@ -1,0 +1,32 @@
+src/renderer/src/components/settings/PromptFirstComposerExperimentalSetting.tsx
+  s_3af96af59d62d2::t_9ac93f00a1f5b7 1-44
+src/renderer/src/i18n/locales/en.json
+  s_3af96af59d62d2::t_9ac93f00a1f5b7 7762-7764,10286-10292
+  s_3af96af59d62d2::t_3d9188ee17e401 19915
+src/renderer/src/components/settings/ExperimentalPane.tsx
+  s_3af96af59d62d2::t_9ac93f00a1f5b7 13,48-50,112-116
+  s_3af96af59d62d2::t_1175fc93da3835 117-118
+src/renderer/src/components/settings/prompt-first-composer-experimental-search-entry.ts
+  s_3af96af59d62d2::t_9ac93f00a1f5b7 1-34
+src/renderer/src/components/settings/PromptFirstComposerExperimentalSetting.test.tsx
+  s_3af96af59d62d2::t_9ac93f00a1f5b7 1-27
+src/renderer/src/components/settings/experimental-search.ts
+  s_3af96af59d62d2::t_9ac93f00a1f5b7 7,52,232-235
+  s_3af96af59d62d2::t_de7878f0fc1b5a 236-237
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "57ad224b679e3c74cbe3f7536a1a665667aecb3b",
+  "prompts": {},
+  "sessions": {
+    "s_3af96af59d62d2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9d202a1e-0f0b-4d80-a526-2609c6724227",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
