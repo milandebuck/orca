@@ -272,8 +272,7 @@ export function useQuickCreationExecution(input: QuickCreationExecutionInput) {
         clearNewWorkspaceDraft()
       }
 
-      // Why: "Create more" in the prompt-first pane keeps the composer in the center instead of
-      // handing it to a fresh dialog over the creation panel.
+      // Why: "Create more" in the prompt-first pane keeps the composer in the center, not a fresh dialog.
       const startCreation = handoff?.start ?? runBackgroundWorktreeCreation
       startCreation(request, {
         revealCreationSurface: !(createMultiple && settings?.promptFirstComposer === true)

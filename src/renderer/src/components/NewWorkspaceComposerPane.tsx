@@ -27,10 +27,7 @@ function PaneComposerHeading({
   )
 }
 
-/**
- * Center-pane host for the prompt-first composer: same state and card as the dialog,
- * laid out like a chat start screen instead of a modal.
- */
+/** Center-pane host for the prompt-first composer: the dialog's body laid out as a chat start screen. */
 export default function NewWorkspaceComposerPane(): React.JSX.Element {
   // SAFETY: the pane only mounts while activeModal is 'new-workspace-composer', whose openers pass ComposerModalData.
   const modalData = useAppStore((s) => s.modalData as ComposerModalData | undefined)
@@ -63,7 +60,6 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
   }, [])
 
   // Why: the pane is not modal, so switching workspaces in the sidebar leaves it behind.
-  // Leaving the workspace view is handled by the dialog host, which outlives this pane.
   const openedForWorktreeRef = useRef(activeWorktreeId)
   useEffect(() => {
     if (activeWorktreeId !== openedForWorktreeRef.current) {
@@ -71,9 +67,7 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
     }
   }, [activeWorktreeId, dismiss])
 
-  // Why: no dismissable layer here; nested Radix layers preventDefault Escape before it bubbles,
-  // and listening on window (after document) is what lets us see that. Escape typed into the
-  // sidebar, or one that cancels an IME composition, must not throw the prompt away.
+  // Why: on window so nested Radix layers' handled Escape arrives defaultPrevented; sidebar/IME Escape keeps the prompt.
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent): void => {
       if (event.key !== 'Escape' || event.defaultPrevented || isImeOwnedKeyboardEvent(event)) {

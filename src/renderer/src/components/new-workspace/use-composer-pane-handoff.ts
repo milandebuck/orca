@@ -7,24 +7,19 @@ type ComposerPaneHandoffInput = {
   closeComposer: () => void
 }
 
-/**
- * Whether the dialog host must stay empty because the view left the workspace while the center
- * pane hosted an open composer. Why: the pane unmounts in the same commit that changes the view,
- * so it can't observe the change itself; without this the dialog would remount with an empty prompt.
- */
+/** Whether the dialog host stays empty because the view left the workspace while the pane hosted the composer. */
 export function useComposerPaneHandoff({
   composerOpen,
   paneActive,
   workspaceViewActive,
   closeComposer
 }: ComposerPaneHandoffInput): boolean {
-  // Why a latch in state: it has to be visible in this render, so the dialog never mounts.
+  // Why: the pane unmounts in the commit that changes the view, so the latch must be visible this render.
   const [paneHosted, setPaneHosted] = useState(paneActive)
   if (paneActive && !paneHosted) {
     setPaneHosted(true)
   }
-  // Why: a creation surface taking the center (e.g. "Create more") hands the composer to the
-  // dialog on purpose, so a later view change must not dismiss that dialog.
+  // Why: a creation surface taking the center hands the composer to the dialog on purpose; keep that dialog.
   if (paneHosted && (!composerOpen || (!paneActive && workspaceViewActive))) {
     setPaneHosted(false)
   }
