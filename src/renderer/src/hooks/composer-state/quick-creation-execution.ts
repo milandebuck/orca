@@ -272,11 +272,12 @@ export function useQuickCreationExecution(input: QuickCreationExecutionInput) {
         clearNewWorkspaceDraft()
       }
 
-      if (handoff) {
-        handoff.start(request)
-      } else {
-        runBackgroundWorktreeCreation(request)
-      }
+      // Why: "Create more" in the prompt-first pane keeps the composer in the center instead of
+      // handing it to a fresh dialog over the creation panel.
+      const startCreation = handoff?.start ?? runBackgroundWorktreeCreation
+      startCreation(request, {
+        revealCreationSurface: !(createMultiple && settings?.promptFirstComposer === true)
+      })
 
       // The composer already closed at handoff; closing again could dismiss a newer modal.
       if (handoff?.isHandedOff()) {

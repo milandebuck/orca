@@ -6,6 +6,7 @@ import {
   type WorktreeCreationRequest
 } from '@/lib/pending-worktree-creation'
 import {
+  type BackgroundWorktreeCreationOptions,
   beginBackgroundWorktreePreparation,
   continueBackgroundWorktreeCreation,
   runBackgroundWorktreeCreation
@@ -19,7 +20,7 @@ export const COMPOSER_CREATE_PREPARE_DEADLINE_MS = 5 * 60_000
 
 export type ComposerCreateHandoff = {
   /** Starts creation, continuing the staged sidebar row when one exists. */
-  start: (request: WorktreeCreationRequest) => void
+  start: (request: WorktreeCreationRequest, options?: BackgroundWorktreeCreationOptions) => void
   /** True once a staged sidebar row owns the submit. */
   isHandedOff: () => boolean
   /** Reports a handed-off failure; returns false when the composer still owns it. */
@@ -97,13 +98,13 @@ export function scheduleComposerCreateHandoff({
   }, delayMs)
 
   return {
-    start: (request) => {
+    start: (request, options) => {
       if (finished) {
         return
       }
       finish()
       if (stagedCreationId === null) {
-        runBackgroundWorktreeCreation(request)
+        runBackgroundWorktreeCreation(request, options)
         return
       }
       const store = useAppStore.getState()

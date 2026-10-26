@@ -80,10 +80,10 @@ describe('scheduleComposerCreateHandoff', () => {
 
   it('starts directly without staging or closing when preflight is fast', () => {
     const { handoff, onHandOff } = schedule()
-    handoff.start(finalRequest)
+    handoff.start(finalRequest, { revealCreationSurface: false })
     vi.runAllTimers()
 
-    expect(flow.run).toHaveBeenCalledWith(finalRequest)
+    expect(flow.run).toHaveBeenCalledWith(finalRequest, { revealCreationSurface: false })
     expect(flow.begin).not.toHaveBeenCalled()
     expect(onHandOff).not.toHaveBeenCalled()
     expect(handoff.fail('boom')).toBe(false)
