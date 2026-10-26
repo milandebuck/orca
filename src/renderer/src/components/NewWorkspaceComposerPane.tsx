@@ -32,6 +32,7 @@ function PaneComposerHeading({
  * laid out like a chat start screen instead of a modal.
  */
 export default function NewWorkspaceComposerPane(): React.JSX.Element {
+  // SAFETY: the pane only mounts while activeModal is 'new-workspace-composer', whose openers pass ComposerModalData.
   const modalData = useAppStore((s) => s.modalData as ComposerModalData | undefined)
   const closeModal = useAppStore((s) => s.closeModal)
   const activeWorktreeId = useAppStore((s) => s.activeWorktreeId)
