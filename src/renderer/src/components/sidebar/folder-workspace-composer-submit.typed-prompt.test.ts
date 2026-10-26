@@ -33,14 +33,15 @@ const linkedPr = {
 function submitWithTypedPrompt(
   typedPrompt: string,
   linkedWorkItem: typeof linkedPr | null,
-  createFolderWorkspace = vi.fn(async () => makeFolderWorkspace())
+  createFolderWorkspace = vi.fn(async () => makeFolderWorkspace()),
+  note = ''
 ): Promise<boolean> {
   return submitFolderWorkspaceCreate({
     projectGroup: makeProjectGroup(),
     name: '',
     lastAutoName: '',
     linkedWorkItem,
-    note: '',
+    note,
     typedPrompt,
     quickAgent: 'codex',
     autoRenameBranchFromWork: true,
@@ -81,5 +82,17 @@ describe('submitFolderWorkspaceCreate typed prompt', () => {
     expect(startupCommand()).toContain('Review the migration')
     expect(startupCommand()).toContain(linkedPr.url)
     expect(mocks.ensureAgentStartupInTerminal).not.toHaveBeenCalled()
+  })
+
+  it('keeps the note alongside a typed prompt when nothing is linked', async () => {
+    await submitWithTypedPrompt(
+      'Fix the flaky checkout flow',
+      null,
+      undefined,
+      'Only touch the cart'
+    )
+
+    expect(startupCommand()).toContain('Fix the flaky checkout flow')
+    expect(startupCommand()).toContain('Only touch the cart')
   })
 })

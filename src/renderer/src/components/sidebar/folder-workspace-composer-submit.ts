@@ -119,9 +119,12 @@ export async function submitFolderWorkspaceCreate({
   // Why: a typed prompt is an instruction, so it auto-submits even with a linked item; the
   // linked draft-paste flow is for context-only launches.
   const hasTypedPrompt = typedPrompt.trim().length > 0
-  const submitPrompt = hasTypedPrompt
-    ? resolveQuickCreatePrompt({ typedPrompt, linkedWorkItem, note }).prompt
-    : note
+  // Why: folder workspaces have no comment field, so without linked context the note rides in the prompt.
+  const submitPrompt = !hasTypedPrompt
+    ? note
+    : linkedWorkItem
+      ? resolveQuickCreatePrompt({ typedPrompt, linkedWorkItem, note }).prompt
+      : [typedPrompt.trim(), note.trim()].filter(Boolean).join('\n\n')
   const useLinkedDraftLaunch = Boolean(quickAgent && linkedWorkItem && !hasTypedPrompt)
   const startupPlan =
     quickAgent && launchPlatform && linkedWorkItem && useLinkedDraftLaunch
