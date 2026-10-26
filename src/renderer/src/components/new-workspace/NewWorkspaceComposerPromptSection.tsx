@@ -37,7 +37,6 @@ export function NewWorkspaceComposerPromptSection({
   const disabled = quickAgent === null
   return (
     <div
-      data-contextual-tour-target="workspace-creation-prompt"
       // Why: the same frame as the native chat composer, since the prompt becomes its first message.
       className="rounded-xl border border-chat-composer-border bg-chat-composer-surface p-1.5 shadow-xs"
     >

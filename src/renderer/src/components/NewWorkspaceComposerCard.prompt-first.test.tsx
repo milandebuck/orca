@@ -75,8 +75,7 @@ describe('NewWorkspaceComposerCard prompt-first setting', () => {
         button.textContent?.includes('Create worktree')
     )
     expect(createButtons).toHaveLength(1)
-    expect(
-      createButtons[0].closest('[data-contextual-tour-target="workspace-creation-prompt"]')
-    ).not.toBeNull()
+    const promptBox = container.querySelector(PROMPT_INPUT)?.parentElement
+    expect(promptBox?.contains(createButtons[0])).toBe(true)
   })
 })
