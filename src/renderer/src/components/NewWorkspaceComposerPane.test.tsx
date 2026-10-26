@@ -7,7 +7,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 const storeState: {
   activeModal: string
   activeWorktreeId: string | null
-  modalData: undefined
+  modalData: { initialRepoId?: string } | undefined
   closeModal: ReturnType<typeof vi.fn>
 } = {
   activeModal: 'new-workspace-composer',
@@ -23,7 +23,10 @@ vi.mock('@/store', () => ({
 }))
 
 vi.mock('@/components/NewWorkspaceComposerModal', () => ({
-  WorkspaceComposerBody: () => <textarea data-workspace-prompt-input="true" />
+  // Seeds from modalData only on mount, like the real composer state.
+  WorkspaceComposerBody: ({ modalData }: { modalData: { initialRepoId?: string } }) => (
+    <textarea data-workspace-prompt-input="true" defaultValue={modalData.initialRepoId} />
+  )
 }))
 
 import NewWorkspaceComposerPane from './NewWorkspaceComposerPane'
@@ -61,6 +64,7 @@ describe('NewWorkspaceComposerPane', () => {
   beforeEach(() => {
     storeState.activeModal = 'new-workspace-composer'
     storeState.activeWorktreeId = 'wt-1'
+    storeState.modalData = undefined
     storeState.closeModal.mockReset()
   })
 
@@ -112,5 +116,16 @@ describe('NewWorkspaceComposerPane', () => {
       root?.render(<NewWorkspaceComposerPane />)
     })
     expect(storeState.closeModal).toHaveBeenCalledTimes(1)
+  })
+
+  it('reseeds the composer when it is reopened for another project', () => {
+    storeState.modalData = { initialRepoId: 'repo-1' }
+    renderPane()
+    storeState.modalData = { initialRepoId: 'repo-2' }
+    act(() => {
+      root?.render(<NewWorkspaceComposerPane />)
+    })
+    const prompt = document.querySelector<HTMLTextAreaElement>('[data-workspace-prompt-input]')
+    expect(prompt?.value).toBe('repo-2')
   })
 })

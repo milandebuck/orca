@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { MessageSquare } from 'lucide-react'
 import { useAppStore } from '@/store'
 import { isImeOwnedKeyboardEvent } from '@/lib/ime-composition-keyboard-event'
@@ -35,6 +35,13 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
   const modalData = useAppStore((s) => s.modalData as ComposerModalData | undefined)
   const closeModal = useAppStore((s) => s.closeModal)
   const activeWorktreeId = useAppStore((s) => s.activeWorktreeId)
+  // Why: the sidebar stays usable, so a re-open (another project's "+") must reseed the body's state.
+  const [openedData, setOpenedData] = useState(modalData)
+  const [openCount, setOpenCount] = useState(0)
+  if (modalData !== openedData) {
+    setOpenedData(modalData)
+    setOpenCount((count) => count + 1)
+  }
   const containerRef = useRef<HTMLDivElement | null>(null)
   const submitCancelledRef = useRef(false)
   const isSubmissionCancelled = useCallback(() => submitCancelledRef.current, [])
@@ -94,6 +101,7 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
         className="mx-auto flex w-full max-w-(--chat-content-max-width) flex-1 flex-col px-3 pt-2 pb-4 sm:px-4"
       >
         <WorkspaceComposerBody
+          key={openCount}
           modalData={modalData ?? {}}
           onClose={closeComposer}
           isSubmissionCancelled={isSubmissionCancelled}
