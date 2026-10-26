@@ -155,7 +155,7 @@ function DialogComposerHeading({
 }): React.JSX.Element {
   return (
     <DialogHeader className="gap-1">
-      <DialogTitle>{title}</DialogTitle>
+      <DialogTitle className="text-base font-semibold">{title}</DialogTitle>
       <DialogDescription className="sr-only">{description}</DialogDescription>
     </DialogHeader>
   )
