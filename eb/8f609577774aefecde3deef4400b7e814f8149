@@ -1,0 +1,21 @@
+src/renderer/src/components/new-workspace/setup-decision-labels.ts
+  s_32387c30198b7f::t_7c0a1261e0991a 1
+pnpm-lock.yaml
+  s_32387c30198b7f::t_a3d729955d8c38 9-11,95-99,149-165
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "eb8f609577774aefecde3deef4400b7e814f8149",
+  "prompts": {},
+  "sessions": {
+    "s_32387c30198b7f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bfcfa66e-9a80-4ed2-9ad2-cb4eed304a8d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
