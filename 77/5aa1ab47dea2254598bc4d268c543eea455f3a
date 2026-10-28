@@ -2,6 +2,7 @@ src/renderer/src/hooks/composer-state/quick-creation-execution.test.ts
   s_3af96af59d62d2::t_d7c82fa883ab67 15-39,42-51,83-89,134-141,149-161
   s_3af96af59d62d2::t_f63aea79181e73 142-148
   s_3af96af59d62d2::t_0023ffac709318 162-165
+  s_32387c30198b7f::t_f1ee89abe8a5cf 40-41
 src/renderer/src/hooks/composer-state/quick-creation-request.ts
   s_3af96af59d62d2::t_48bdc116341dab 62-63
 src/renderer/src/components/new-workspace/NewWorkspaceComposerPromptSection.test.tsx
@@ -42,6 +43,14 @@ src/renderer/src/components/sidebar/folder-workspace-composer-submit.typed-promp
   "base_commit_sha": "775aa1ab47dea2254598bc4d268c543eea455f3a",
   "prompts": {},
   "sessions": {
+    "s_32387c30198b7f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bfcfa66e-9a80-4ed2-9ad2-cb4eed304a8d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    },
     "s_3af96af59d62d2": {
       "agent_id": {
         "tool": "claude",
