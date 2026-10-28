@@ -1,0 +1,21 @@
+src/renderer/src/lib/composer-create-handoff.test.ts
+  s_32387c30198b7f::t_4faa37ce7f2001 83,86
+src/renderer/src/hooks/composer-state/quick-creation-execution.ts
+  s_32387c30198b7f::t_79ae9c424f6cd0 276-277,279
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a797e86c0603aeb388bce561b4382db6f77471c1",
+  "prompts": {},
+  "sessions": {
+    "s_32387c30198b7f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bfcfa66e-9a80-4ed2-9ad2-cb4eed304a8d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
