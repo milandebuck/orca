@@ -1,0 +1,56 @@
+src/renderer/src/lib/workspace-composer-pane-surface.ts
+  s_11e2911665c9bd::t_a565688cddf1bd 56
+  s_11e2911665c9bd::t_a425e532bbb55a 2-3,8-9,23,31,34-55,57-58
+  s_11e2911665c9bd::t_691371d11a5e48 59
+src/renderer/src/store/slices/ui/ui-slice-contract-contextual.ts
+  s_11e2911665c9bd::t_8c6750d13de9ce 59-60,63-64
+src/renderer/src/store/slices/ui-modal-composer-parking.test.ts
+  s_11e2911665c9bd::t_35c8247845c90f 1-64
+src/renderer/src/app-shell/use-app-chrome-layout.ts
+  s_11e2911665c9bd::t_36c9e21d1658cf 31,80
+src/renderer/src/components/NewWorkspaceComposerModal.tsx
+  s_11e2911665c9bd::t_36c9e21d1658cf 34,69-71,76,79
+src/renderer/src/components/NewWorkspaceComposerPane.tsx
+  s_11e2911665c9bd::t_753aaf262d1602 33,35-37
+  s_11e2911665c9bd::t_ed43dc02e00598 32,34,49
+src/renderer/src/lib/workspace-composer-pane-surface.test.ts
+  s_11e2911665c9bd::t_b3854d025f5aec 10,22,34,46,58,64-74
+  s_11e2911665c9bd::t_685cf1c3e4fbc7 75
+src/renderer/src/store/slices/ui/ui-slice-modal-actions.ts
+  s_11e2911665c9bd::t_922d09bd8b8d08 3,9,14-25,28-29,32-34,38-47,49-55
+  s_11e2911665c9bd::t_3aab6f0889b361 56-59
+src/renderer/src/components/NewWorkspaceComposerPane.test.tsx
+  s_11e2911665c9bd::t_dd4a14b4db51ff 11,16,68,87,95,101,109,118
+src/renderer/src/components/new-workspace/setup-decision-labels.ts
+  s_32387c30198b7f::t_7c0a1261e0991a 1
+pnpm-lock.yaml
+  s_32387c30198b7f::t_a3d729955d8c38 9-11,95-99,149-165
+src/renderer/src/lib/composer-create-handoff.test.ts
+  s_32387c30198b7f::t_4faa37ce7f2001 83,86
+src/renderer/src/hooks/composer-state/quick-creation-execution.ts
+  s_32387c30198b7f::t_79ae9c424f6cd0 276-277,279
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "39a7b12bd3ac5f830134c030752063d7dcc44462",
+  "prompts": {},
+  "sessions": {
+    "s_11e2911665c9bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b28428fb-9312-4d28-8636-6e1a8f503281",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    },
+    "s_32387c30198b7f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bfcfa66e-9a80-4ed2-9ad2-cb4eed304a8d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
