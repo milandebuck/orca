@@ -28,6 +28,7 @@ export function useAppChromeLayout() {
   const settings = useAppStore((s) => s.settings)
   const activePendingCreationId = useAppStore((s) => s.activePendingCreationId)
   const activeModal = useAppStore((s) => s.activeModal)
+  const composerParked = useAppStore((s) => s.parkedComposerModalData !== null)
   // Pending creation owns the tab strip immediately; a delayed loader gate swaps it mid-create.
   const activePendingCreationExists = useAppStore(
     (s) =>
@@ -82,6 +83,7 @@ export function useAppChromeLayout() {
   const composerPaneActive = shouldShowWorkspaceComposerPane({
     activeView,
     activeModal,
+    composerParked,
     promptFirstComposer: settings?.promptFirstComposer === true,
     creationSurfaceActive: creationLayoutActive
   })

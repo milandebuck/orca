@@ -7,6 +7,7 @@ describe('shouldShowWorkspaceComposerPane', () => {
       shouldShowWorkspaceComposerPane({
         activeView: 'terminal',
         activeModal: 'new-workspace-composer',
+        composerParked: false,
         promptFirstComposer: true,
         creationSurfaceActive: false
       })
@@ -18,6 +19,7 @@ describe('shouldShowWorkspaceComposerPane', () => {
       shouldShowWorkspaceComposerPane({
         activeView: 'terminal',
         activeModal: 'new-workspace-composer',
+        composerParked: false,
         promptFirstComposer: false,
         creationSurfaceActive: false
       })
@@ -29,6 +31,7 @@ describe('shouldShowWorkspaceComposerPane', () => {
       shouldShowWorkspaceComposerPane({
         activeView: 'settings',
         activeModal: 'new-workspace-composer',
+        composerParked: false,
         promptFirstComposer: true,
         creationSurfaceActive: false
       })
@@ -40,6 +43,7 @@ describe('shouldShowWorkspaceComposerPane', () => {
       shouldShowWorkspaceComposerPane({
         activeView: 'terminal',
         activeModal: 'new-workspace-composer',
+        composerParked: false,
         promptFirstComposer: true,
         creationSurfaceActive: true
       })
@@ -51,9 +55,22 @@ describe('shouldShowWorkspaceComposerPane', () => {
       shouldShowWorkspaceComposerPane({
         activeView: 'terminal',
         activeModal: 'none',
+        composerParked: false,
         promptFirstComposer: true,
         creationSurfaceActive: false
       })
     ).toBe(false)
+  })
+
+  it('stays active while another modal holds the slot over the parked composer', () => {
+    expect(
+      shouldShowWorkspaceComposerPane({
+        activeView: 'terminal',
+        activeModal: 'delete-worktree',
+        composerParked: true,
+        promptFirstComposer: true,
+        creationSurfaceActive: false
+      })
+    ).toBe(true)
   })
 })

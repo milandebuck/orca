@@ -31,8 +31,7 @@ import type { WorkspaceStatus } from '../../../shared/worktree/types'
 import type { TaskSourceContext } from '../../../shared/task-source-context'
 import { translate } from '@/i18n/i18n'
 import { getWorkspaceComposerInitialFocusTarget } from '@/lib/workspace-composer-initial-focus'
-import { shouldShowWorkspaceComposerPane } from '@/lib/workspace-composer-pane-surface'
-import { shouldShowWorktreeCreationSurface } from '@/lib/worktree-creation-surface'
+import { selectWorkspaceComposerPaneActive } from '@/lib/workspace-composer-pane-surface'
 import { useComposerPaneHandoff } from '@/components/new-workspace/use-composer-pane-handoff'
 import { getFolderWorkspacePrimaryActionLabel } from '@/components/sidebar/folder-workspace-composer-helpers'
 import type { WorkspaceCreationTargetHint } from '@/lib/project-host-workspace-target'
@@ -67,28 +66,17 @@ export default function NewWorkspaceComposerModal(): React.JSX.Element | null {
   const modalData = useAppStore((s) => s.modalData as ComposerModalData | undefined)
   const closeModal = useAppStore((s) => s.closeModal)
   // Why: the prompt-first composer renders in the center pane (NewWorkspaceComposerPane) instead.
-  const paneActive = useAppStore((s) =>
-    shouldShowWorkspaceComposerPane({
-      activeView: s.activeView,
-      activeModal: s.activeModal,
-      promptFirstComposer: s.settings?.promptFirstComposer === true,
-      creationSurfaceActive: shouldShowWorktreeCreationSurface({
-        activeView: s.activeView,
-        activePendingCreationId: s.activePendingCreationId,
-        hasActivePendingCreation:
-          s.activePendingCreationId !== null &&
-          s.pendingWorktreeCreations[s.activePendingCreationId] !== undefined
-      })
-    })
-  )
+  const paneActive = useAppStore(selectWorkspaceComposerPaneActive)
+  const composerParked = useAppStore((s) => s.parkedComposerModalData !== null)
+  const closeWorkspaceComposer = useAppStore((s) => s.closeWorkspaceComposer)
   const workspaceViewActive = useAppStore((s) => s.activeView === 'terminal')
   // Why: leaving the workspace view while the pane hosts the composer dismisses it instead of
   // re-hosting it here as an empty dialog.
   const handingOff = useComposerPaneHandoff({
-    composerOpen: visible,
+    composerOpen: visible || composerParked,
     paneActive,
     workspaceViewActive,
-    closeComposer: closeModal
+    closeComposer: closeWorkspaceComposer
   })
 
   if (!visible || paneActive || handingOff) {

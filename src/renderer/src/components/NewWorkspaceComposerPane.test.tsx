@@ -8,12 +8,12 @@ const storeState: {
   activeModal: string
   activeWorktreeId: string | null
   modalData: { initialRepoId?: string } | undefined
-  closeModal: ReturnType<typeof vi.fn>
+  closeWorkspaceComposer: ReturnType<typeof vi.fn>
 } = {
   activeModal: 'new-workspace-composer',
   activeWorktreeId: 'wt-1',
   modalData: undefined,
-  closeModal: vi.fn()
+  closeWorkspaceComposer: vi.fn()
 }
 
 vi.mock('@/store', () => ({
@@ -65,7 +65,7 @@ describe('NewWorkspaceComposerPane', () => {
     storeState.activeModal = 'new-workspace-composer'
     storeState.activeWorktreeId = 'wt-1'
     storeState.modalData = undefined
-    storeState.closeModal.mockReset()
+    storeState.closeWorkspaceComposer.mockReset()
   })
 
   afterEach(() => {
@@ -84,7 +84,7 @@ describe('NewWorkspaceComposerPane', () => {
   it('closes on Escape pressed inside the pane', () => {
     const prompt = renderPane()
     const event = pressEscape(prompt)
-    expect(storeState.closeModal).toHaveBeenCalledTimes(1)
+    expect(storeState.closeWorkspaceComposer).toHaveBeenCalledTimes(1)
     expect(event.defaultPrevented).toBe(true)
   })
 
@@ -92,13 +92,13 @@ describe('NewWorkspaceComposerPane', () => {
     const prompt = renderPane()
     prompt.addEventListener('keydown', (event) => event.preventDefault())
     pressEscape(prompt)
-    expect(storeState.closeModal).not.toHaveBeenCalled()
+    expect(storeState.closeWorkspaceComposer).not.toHaveBeenCalled()
   })
 
   it('ignores the Escape that cancels an IME composition', () => {
     const prompt = renderPane()
     pressEscape(prompt, { isComposing: true })
-    expect(storeState.closeModal).not.toHaveBeenCalled()
+    expect(storeState.closeWorkspaceComposer).not.toHaveBeenCalled()
   })
 
   it('ignores Escape typed into another surface such as the sidebar', () => {
@@ -106,7 +106,7 @@ describe('NewWorkspaceComposerPane', () => {
     const sidebarInput = document.createElement('input')
     document.body.appendChild(sidebarInput)
     pressEscape(sidebarInput)
-    expect(storeState.closeModal).not.toHaveBeenCalled()
+    expect(storeState.closeWorkspaceComposer).not.toHaveBeenCalled()
   })
 
   it('closes when the active workspace changes', () => {
@@ -115,7 +115,7 @@ describe('NewWorkspaceComposerPane', () => {
     act(() => {
       root?.render(<NewWorkspaceComposerPane />)
     })
-    expect(storeState.closeModal).toHaveBeenCalledTimes(1)
+    expect(storeState.closeWorkspaceComposer).toHaveBeenCalledTimes(1)
   })
 
   it('reseeds the composer when it is reopened for another project', () => {

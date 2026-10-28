@@ -29,9 +29,12 @@ function PaneComposerHeading({
 
 /** Center-pane host for the prompt-first composer: the dialog's body laid out as a chat start screen. */
 export default function NewWorkspaceComposerPane(): React.JSX.Element {
-  // SAFETY: the pane only mounts while activeModal is 'new-workspace-composer', whose openers pass ComposerModalData.
-  const modalData = useAppStore((s) => s.modalData as ComposerModalData | undefined)
-  const closeModal = useAppStore((s) => s.closeModal)
+  // Why: while another modal holds the slot, the parked object keeps its identity so the body is not reseeded.
+  const slotData = useAppStore((s) =>
+    s.activeModal === 'new-workspace-composer' ? s.modalData : s.parkedComposerModalData
+  )
+  // SAFETY: the pane only mounts with the composer in the slot or parked, and its openers pass ComposerModalData.
+  const modalData = slotData as ComposerModalData | null
   const activeWorktreeId = useAppStore((s) => s.activeWorktreeId)
   // Why: the sidebar stays usable, so a re-open (another project's "+") must reseed the body's state.
   const [openedData, setOpenedData] = useState(modalData)
@@ -43,11 +46,7 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const submitCancelledRef = useRef(false)
   const isSubmissionCancelled = useCallback(() => submitCancelledRef.current, [])
-  const closeComposer = useCallback(() => {
-    if (useAppStore.getState().activeModal === 'new-workspace-composer') {
-      closeModal()
-    }
-  }, [closeModal])
+  const closeComposer = useAppStore((s) => s.closeWorkspaceComposer)
   const dismiss = useCallback(() => {
     submitCancelledRef.current = true
     closeComposer()
