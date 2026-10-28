@@ -1,0 +1,39 @@
+src/renderer/src/components/NewWorkspaceComposerCard.tsx
+  s_32387c30198b7f::t_d8d54fca2a423d 96,340-345
+src/renderer/src/components/settings/experimental-search.ts
+  s_32387c30198b7f::t_d8d54fca2a423d 7,53,232-235
+src/renderer/src/components/settings/PromptFirstComposerExperimentalSetting.tsx
+  s_32387c30198b7f::t_d8d54fca2a423d 1-44
+src/shared/global-settings-types.ts
+  s_32387c30198b7f::t_d8d54fca2a423d 214-215
+src/renderer/src/i18n/locales/en.json
+  s_32387c30198b7f::t_d8d54fca2a423d 7331-7333,9556-9562
+src/shared/default-global-settings.ts
+  s_32387c30198b7f::t_d8d54fca2a423d 135
+src/renderer/src/components/NewWorkspaceComposerCard.prompt-first.test.tsx
+  s_32387c30198b7f::t_d8d54fca2a423d 1-69
+src/renderer/src/components/settings/ExperimentalPane.tsx
+  s_32387c30198b7f::t_d8d54fca2a423d 13,48-50,111-115
+src/shared/telemetry-property-schemas.ts
+  s_32387c30198b7f::t_d8d54fca2a423d 211-212
+src/renderer/src/components/settings/prompt-first-composer-experimental-search-entry.ts
+  s_32387c30198b7f::t_d8d54fca2a423d 1-34
+src/renderer/src/components/settings/PromptFirstComposerExperimentalSetting.test.tsx
+  s_32387c30198b7f::t_d8d54fca2a423d 1-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "199cc977620468ad68e69f573c592f392cdf01de",
+  "prompts": {},
+  "sessions": {
+    "s_32387c30198b7f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bfcfa66e-9a80-4ed2-9ad2-cb4eed304a8d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
