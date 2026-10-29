@@ -1,0 +1,23 @@
+src/renderer/src/components/new-workspace/use-composer-pane-handoff.ts
+  s_1ae676e074c414::t_8897d2b1c4c31d 10,17,22
+src/renderer/src/components/NewWorkspaceComposerPane.tsx
+  s_1ae676e074c414::t_8897d2b1c4c31d 30,70
+src/renderer/src/hooks/composer-state/quick-creation-execution.ts
+  s_1ae676e074c414::t_8897d2b1c4c31d 275
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "71757be1a7e7a6ecad2b71998011bdcef9793b62",
+  "prompts": {},
+  "sessions": {
+    "s_1ae676e074c414": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4a8a8485-2798-4685-ab41-3267fb495bfd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
