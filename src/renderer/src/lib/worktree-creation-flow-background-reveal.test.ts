@@ -4,12 +4,18 @@ import type {
   WorktreeCreationRequest
 } from '@/lib/pending-worktree-creation'
 
+const initialState: {
+  settings: { activeRuntimeEnvironmentId: string | null }
+  pendingWorktreeCreations: Record<string, PendingWorktreeCreation>
+  activePendingCreationId: string | null
+} = {
+  settings: { activeRuntimeEnvironmentId: null },
+  pendingWorktreeCreations: {},
+  activePendingCreationId: 'creation-shown'
+}
+
 const store = {
-  settings: {
-    activeRuntimeEnvironmentId: null as string | null
-  },
-  pendingWorktreeCreations: {} as Record<string, PendingWorktreeCreation>,
-  activePendingCreationId: 'creation-shown' as string | null,
+  ...initialState,
   beginPendingWorktreeCreation: vi.fn(),
   setActivePendingWorktreeCreation: vi.fn(),
   setActiveView: vi.fn(),

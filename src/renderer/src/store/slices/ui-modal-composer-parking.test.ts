@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import { createUIStore } from './ui-slice-test-harness'
 import { MODAL_DISMISSED_KEY } from './modal-slot-dismissal'
+import { getDefaultSettings } from '../../../../shared/constants'
 
 function storeWithComposerPane(promptFirstComposer = true) {
   const store = createUIStore()
@@ -8,7 +9,7 @@ function storeWithComposerPane(promptFirstComposer = true) {
     activeView: 'terminal',
     activePendingCreationId: null,
     pendingWorktreeCreations: {},
-    settings: { promptFirstComposer } as never
+    settings: { ...getDefaultSettings('/tmp'), promptFirstComposer }
   })
   return store
 }

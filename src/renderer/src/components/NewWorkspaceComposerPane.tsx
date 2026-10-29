@@ -33,7 +33,7 @@ export default function NewWorkspaceComposerPane(): React.JSX.Element {
   const slotData = useAppStore((s) =>
     s.activeModal === 'new-workspace-composer' ? s.modalData : s.parkedComposerModalData
   )
-  // SAFETY: the pane only mounts with the composer in the slot or parked, and its openers pass ComposerModalData.
+  // oxlint-disable-next-line typescript/consistent-type-assertions -- SAFETY: the pane only mounts with the composer in the slot or parked, and its openers pass ComposerModalData.
   const modalData = slotData as ComposerModalData | null
   const activeWorktreeId = useAppStore((s) => s.activeWorktreeId)
   // Why: the sidebar stays usable, so a re-open (another project's "+") must reseed the body's state.
