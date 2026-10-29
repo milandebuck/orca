@@ -1,0 +1,21 @@
+src/renderer/src/components/new-workspace/NewWorkspaceComposerTargetNotices.tsx
+  s_4893ef9f917bf1::t_063a2ca46f214f 1-6,10-11,18,25,29,32-33,36,38,42-43,45,48-49,54-57,59-62,71,74,85-86,88,92,108,112,116-117,123-124,127,129,137
+src/renderer/src/components/new-workspace/setup-decision-labels.ts
+  s_4893ef9f917bf1::t_063a2ca46f214f 1-2,5-10,13-15,18,20-21,23-31,33,35-36,38-46,48,50-51,53-58,60-61,63-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "272b1e5ca053e4513746b322a06caf4359528f0a",
+  "prompts": {},
+  "sessions": {
+    "s_4893ef9f917bf1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c2ad8b6c-13be-4389-bf73-392281c4f259",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Milan De Buck <milan.debuck@showpad.com>"
+    }
+  }
+}
