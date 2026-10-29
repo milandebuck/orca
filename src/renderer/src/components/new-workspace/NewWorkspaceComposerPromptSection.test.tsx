@@ -56,6 +56,32 @@ describe('NewWorkspaceComposerPromptSection', () => {
     expect(onCreate).not.toHaveBeenCalled()
   })
 
+  it('takes focus from the name input once an agent is picked', () => {
+    const props = {
+      agentPrompt: '',
+      createDisabled: false,
+      onCreate: vi.fn(),
+      toolbar: <input data-workspace-name-input="true" aria-label="Name" />
+    }
+    const { rerender } = render(<NewWorkspaceComposerPromptSection {...props} quickAgent={null} />)
+    screen.getByLabelText('Name').focus()
+    rerender(<NewWorkspaceComposerPromptSection {...props} quickAgent="claude" />)
+    expect(document.activeElement).toBe(screen.getByLabelText('Prompt'))
+  })
+
+  it('leaves focus the user moved elsewhere when an agent is picked', () => {
+    const props = {
+      agentPrompt: '',
+      createDisabled: false,
+      onCreate: vi.fn(),
+      toolbar: <button type="button">Agent</button>
+    }
+    const { rerender } = render(<NewWorkspaceComposerPromptSection {...props} quickAgent={null} />)
+    screen.getByRole('button', { name: 'Agent' }).focus()
+    rerender(<NewWorkspaceComposerPromptSection {...props} quickAgent="claude" />)
+    expect(document.activeElement).toBe(screen.getByRole('button', { name: 'Agent' }))
+  })
+
   it('is disabled without an agent', () => {
     expect(renderPrompt({ quickAgent: null }).prompt.disabled).toBe(true)
   })

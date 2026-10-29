@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { cn } from '@/lib/utils'
 import { ImeTextarea } from '@/lib/ime-text-field'
 import { translate } from '@/i18n/i18n'
@@ -35,12 +35,29 @@ export function NewWorkspaceComposerPromptSection({
     }
   }
   const disabled = quickAgent === null
+  const promptRef = useRef<HTMLTextAreaElement | null>(null)
+  const wasDisabledRef = useRef(disabled)
+  useEffect(() => {
+    const becameEnabled = wasDisabledRef.current && !disabled
+    wasDisabledRef.current = disabled
+    // Why: initial focus skipped the disabled prompt; claim it once enabled unless the user moved focus elsewhere.
+    const focused = document.activeElement
+    if (
+      becameEnabled &&
+      (focused === null ||
+        focused === document.body ||
+        focused.matches('[data-workspace-name-input="true"]'))
+    ) {
+      promptRef.current?.focus({ preventScroll: true })
+    }
+  }, [disabled])
   return (
     <div
       // Why: the same frame as the native chat composer, since the prompt becomes its first message.
       className="rounded-xl border border-chat-composer-border bg-chat-composer-surface p-1.5 shadow-xs"
     >
       <ImeTextarea
+        ref={promptRef}
         data-workspace-prompt-input="true"
         aria-label={translate('auto.components.NewWorkspaceComposerCard.promptLabel', 'Prompt')}
         value={agentPrompt}
