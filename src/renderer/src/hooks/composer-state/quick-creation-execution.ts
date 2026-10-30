@@ -40,6 +40,7 @@ import { isWorkspaceStatusAllowedOnHost } from '@/store/host-workspace-status-co
 import { settleComposerSubmit } from '@/lib/composer-submit-cancellation'
 import { runBackgroundWorktreeCreation } from '@/lib/worktree-creation-flow'
 import type { ComposerCreateHandoff } from '@/lib/composer-create-handoff'
+import { getComposerCreationOptions } from '@/lib/composer-create-handoff'
 import { translate } from '@/i18n/i18n'
 import { resolveQuickCreatePrompt } from '@/lib/quick-create-prompt'
 import { buildQuickComposerStartup } from './quick-startup-plan'
@@ -272,11 +273,8 @@ export function useQuickCreationExecution(input: QuickCreationExecutionInput) {
         clearNewWorkspaceDraft()
       }
 
-      // Why: "Create more" in the prompt-first pane keeps the composer in the center, not a fresh dialog.
       const startCreation = handoff?.start ?? runBackgroundWorktreeCreation
-      startCreation(request, {
-        revealCreationSurface: !(createMultiple && settings?.promptFirstComposer === true)
-      })
+      startCreation(request, getComposerCreationOptions(createMultiple, settings))
 
       // The composer already closed at handoff; closing again could dismiss a newer modal.
       if (handoff?.isHandedOff()) {

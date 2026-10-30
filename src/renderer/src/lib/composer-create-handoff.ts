@@ -1,4 +1,5 @@
 import { toast } from 'sonner'
+import type { GlobalSettings } from '../../../shared/global-settings-types'
 import { useAppStore } from '@/store'
 import { translate } from '@/i18n/i18n'
 import {
@@ -29,8 +30,17 @@ export type ComposerCreateHandoff = {
   dispose: () => void
 }
 
+/** "Create more" in the prompt-first pane keeps the user where they are instead of opening the creation. */
+export function getComposerCreationOptions(
+  createMultiple: boolean,
+  settings: Pick<GlobalSettings, 'promptFirstComposer'> | null | undefined
+): BackgroundWorktreeCreationOptions {
+  return { revealCreationSurface: !(createMultiple && settings?.promptFirstComposer === true) }
+}
+
 export function scheduleComposerCreateHandoff({
   stagingRequest,
+  creationOptions = {},
   onHandOff,
   isCancelled,
   reopenComposer,
@@ -39,6 +49,7 @@ export function scheduleComposerCreateHandoff({
 }: {
   /** Display-only placeholder; never executed, so Retry cannot run it. */
   stagingRequest: WorktreeCreationRequest
+  creationOptions?: BackgroundWorktreeCreationOptions
   onHandOff: () => void
   isCancelled: () => boolean
   /** Restores the user's input once the closed composer can no longer show it. */
@@ -83,7 +94,7 @@ export function scheduleComposerCreateHandoff({
     if (finished || isCancelled()) {
       return
     }
-    stagedCreationId = beginBackgroundWorktreePreparation(stagingRequest)
+    stagedCreationId = beginBackgroundWorktreePreparation(stagingRequest, creationOptions)
     onHandOff()
     deadline = setTimeout(
       () =>
@@ -123,7 +134,7 @@ export function scheduleComposerCreateHandoff({
         store.setSidebarOpen(true)
         return
       }
-      continueBackgroundWorktreeCreation(stagedCreationId, request)
+      continueBackgroundWorktreeCreation(stagedCreationId, request, options)
     },
     isHandedOff: () => stagedCreationId !== null,
     fail,

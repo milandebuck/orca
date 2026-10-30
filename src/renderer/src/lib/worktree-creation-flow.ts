@@ -92,9 +92,12 @@ export function runBackgroundWorktreeCreation(
 }
 
 /** Stage a pending entry before async preflight so the UI shows immediate progress. */
-export function beginBackgroundWorktreePreparation(request: WorktreeCreationRequest): string {
+export function beginBackgroundWorktreePreparation(
+  request: WorktreeCreationRequest,
+  options: BackgroundWorktreeCreationOptions = {}
+): string {
   const creationId = createBrowserUuid()
-  revealPendingCreation(creationId, request, 'preparing')
+  revealPendingCreation(creationId, request, 'preparing', options)
   return creationId
 }
 
